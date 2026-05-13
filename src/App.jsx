@@ -73,9 +73,7 @@ function App() {
         {/* Grainy Noise Texture Overlay */}
         <div className="noise" />
 
-        <header className="relative z-[100]">
-          <Navbar />
-        </header>
+        <Navbar />
 
         <main className="overflow-x-hidden">
 

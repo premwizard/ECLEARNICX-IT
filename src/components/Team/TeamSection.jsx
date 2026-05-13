@@ -8,14 +8,14 @@ const teamMembers = [
     id: 1,
     name: "Siva",
     role: "Full Stack Developer",
-    image: "/images/team/WhatsApp Image 2026-05-12 at 15.04.02.jpeg",
+    image: "/images/team/siva_portrait.jpeg",
     linkedin: "https://www.linkedin.com/in/siva-v-30b86a210/"
   },
   {
     id: 2,
     name: "Gopinath",
     role: "Mobile App Developer",
-    image: "/images/team/1 (3).png",
+    image: "/images/team/team_1_3.png",
     linkedin: "https://www.linkedin.com/in/gopinath-manickam-941415234/"
   },
   {
@@ -29,42 +29,42 @@ const teamMembers = [
     id: 4,
     name: "Prabavathi",
     role: "Full Stack Developer",
-    image: "/images/team/1 (5).png",
+    image: "/images/team/team_1_5.png",
     linkedin: "https://www.linkedin.com/in/prabavathi-m-5b176227b/"
   },
   {
     id: 5,
     name: "Dhivyadharshini",
     role: "Front End Developer",
-    image: "/images/team/1 (7).png",
+    image: "/images/team/team_1_7.png",
     linkedin: "#"
   },
   {
     id: 6,
     name: "Abinaya",
     role: "Software Tester",
-    image: "/images/team/1 (4).png",
+    image: "/images/team/team_1_4.png",
     linkedin: "https://www.linkedin.com/in/abinaya-s-46a686268/"
   },
   {
     id: 7,
     name: "Kanishkaa",
     role: "UI/UX Designer",
-    image: "/images/team/1 (2).png",
+    image: "/images/team/team_1_2.png",
     linkedin: "https://www.linkedin.com/in/kanishkaa-s/"
   },
   {
     id: 8,
     name: "Kanchana Mala",
     role: "UI/UX Designer",
-    image: "/images/team/1 (9).png",
+    image: "/images/team/team_1_9.png",
     linkedin: "https://www.linkedin.com/in/kanchana-mala-v-g-7503622ab/"
   },
   {
     id: 9,
     name: "Swetha ",
     role: "UI/UX Designer",
-    image: "/images/team/1 (6).png",
+    image: "/images/team/team_1_6.png",
     linkedin: "https://www.linkedin.com/in/swethasakthi1/"
   }
 ];

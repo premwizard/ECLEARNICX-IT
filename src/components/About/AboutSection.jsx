@@ -100,22 +100,22 @@ const AboutSection = () => {
 
                 {/* Image 1 - Top Left */}
                 <div className="about-collage-img aspect-square rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden shadow-xl border-2 md:border-[3px] border-white transform hover:scale-[1.02] transition-transform duration-500">
-                  <img src="public/images/c1.png" alt="Team 1" className="w-full h-full object-cover" />
+                  <img src="/images/c1.png" alt="Team 1" className="w-full h-full object-cover" />
                 </div>
                 
                 {/* Image 2 - Top Right */}
                 <div className="about-collage-img aspect-square rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden shadow-xl border-2 md:border-[3px] border-white mt-8 md:mt-12 transform hover:scale-[1.02] transition-transform duration-500">
-                  <img src="public/images/c2.png" alt="Team 2" className="w-full h-full object-cover" />
+                  <img src="/images/c2.png" alt="Team 2" className="w-full h-full object-cover" />
                 </div>
 
                 {/* Image 3 - Bottom Left */}
                 <div className="about-collage-img aspect-square rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden shadow-xl border-2 md:border-[3px] border-white -mt-8 md:-mt-12 transform hover:scale-[1.02] transition-transform duration-500">
-                  <img src="public/images/c3.png" alt="Team 3" className="w-full h-full object-cover" />
+                  <img src="/images/c3.png" alt="Team 3" className="w-full h-full object-cover" />
                 </div>
 
                 {/* Image 4 - Bottom Right */}
                 <div className="about-collage-img aspect-square rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden shadow-xl border-2 md:border-[3px] border-white transform hover:scale-[1.02] transition-transform duration-500">
-                  <img src="public/images/c4.png" alt="Team 4" className="w-full h-full object-cover" />
+                  <img src="/images/c4.png" alt="Team 4" className="w-full h-full object-cover" />
                 </div>
 
               </div>
