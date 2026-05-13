@@ -1,0 +1,420 @@
+/* ===== HEADING SIZE OVERRIDE ===== */
+h1 {
+  font-size: clamp(36px, 5vw, 64px) !important;
+}
+
+h2 {
+  font-size: clamp(26px, 3.5vw, 42px) !important;
+}
+
+h3 {
+  font-size: clamp(18px, 2vw, 24px) !important;
+}
+
+h4 {
+  font-size: clamp(15px, 1.5vw, 18px) !important;
+}
+
+h5 {
+  font-size: 15px !important;
+}
+
+h6 {
+  font-size: 14px !important;
+}
+
+p {
+  font-size: 15px !important;
+}
+
+/* Fix overflow/clipping globally */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ===== GLOBAL FONT SETTINGS ===== */
+
+/* Apply Satoshi to everything by default */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #6C6A72;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply Manrope to ALL headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1D1729;
+}
+
+/* Specific heading weights */
+h1 {
+  font-weight: 700;
+  font-size: clamp(36px, 5vw, 64px);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: clamp(26px, 3.5vw, 42px);
+}
+
+h3 {
+  font-weight: 600;
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+h4 {
+  font-weight: 500;
+  font-size: clamp(15px, 1.5vw, 18px);
+}
+
+/* Navigation links */
+nav a,
+.nav-link {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Buttons */
+button,
+.btn,
+a.button {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* All paragraph text */
+p {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* Span and small text */
+span,
+li,
+label,
+input,
+textarea {
+  font-family: 'Satoshi', sans-serif;
+}
+
+/* Override any inline font styles */
+.font-heading,
+.title,
+.heading,
+[class*="title"],
+[class*="heading"] {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+.sub-title,
+.subtitle,
+.label-text {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* ===== FIX TEXT CLIPPING ISSUE ===== */
+/* This fixes the text being cut off / hidden */
+
+* {
+  /* Remove overflow hidden from all elements
+     unless specifically needed */
+  min-width: 0;
+}
+
+/* Fix for animated text clipping */
+.elementor-heading-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  padding-bottom: 0.1em;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #5F2DEE;
+    --primary-rgb: 95, 45, 238;
+    --secondary: #B882FC;
+    --secondary-rgb: 184, 130, 252;
+    --accent: #acf100;
+    --dark-bg: #110D1A;
+    --light-bg: #F4F2F9;
+    --heading-light: #1D1729;
+    --heading-dark: #FFFFFF;
+    --body-light: #6C6A72;
+    --body-dark: #A09DB1;
+    --border: rgba(255, 255, 255, 0.1);
+  }
+
+  html {
+    scroll-behavior: auto !important;
+    scroll-padding-top: 100px;
+  }
+
+  body {
+    @apply font-sans antialiased bg-[#F4F2F9] text-[#6C6A72];
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-[#1D1729];
+    font-family: 'Manrope', sans-serif;
+  }
+}
+
+@layer components {
+  .section-dark-deep {
+    @apply bg-[#05020D] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  .section-dark-elevated {
+    @apply bg-[#120F1F] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  .section-dark-navy {
+    @apply bg-[#0B1220] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  .section-dark-purple {
+    @apply bg-[#161224] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  .section-dark-gray {
+    @apply bg-[#10131A] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  .section-dark-violet {
+    @apply bg-[#171420] text-[#A09DB1] relative overflow-hidden;
+  }
+
+  /* Universal heading styles for all dark variants */
+  [class*="section-dark"] h1,
+  [class*="section-dark"] h2,
+  [class*="section-dark"] h3,
+  [class*="section-dark"] h4 {
+    @apply text-white;
+  }
+
+  .section-light {
+    @apply bg-[#F4F2F9] text-[#6C6A72] relative overflow-hidden;
+  }
+
+  .section-light h1,
+  .section-light h2,
+  .section-light h4 {
+    @apply text-[#1D1729];
+  }
+
+  .section-light h3 {
+    @apply text-[#ffffff];
+  }
+
+  /* Section Transition Overlays */
+  .section-divider-top {
+    @apply absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/20 to-transparent pointer-events-none z-10;
+  }
+
+  .section-divider-bottom {
+    @apply absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-10;
+  }
+
+  .glass-nav {
+    @apply bg-white/70 backdrop-blur-lg border-b border-white/20 transition-all duration-300;
+  }
+
+  .premium-card {
+    @apply bg-white rounded-2xl shadow-lg border border-white/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .premium-card-dark {
+    @apply bg-white/[0.02] backdrop-blur-lg border border-white/5 rounded-2xl transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10;
+  }
+
+  .magnetic-button {
+    @apply relative overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95;
+  }
+}
+
+@layer utilities {
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    @apply fixed inset-0 pointer-events-none opacity-[0.015] z-[9999];
+  }
+
+  .glow-mesh {
+    @apply absolute w-[300px] h-[300px] rounded-full blur-[80px] opacity-10 pointer-events-none;
+  }
+
+  .text-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(circle at center, black, transparent);
+  }
+
+  .nav-glow {
+    @apply absolute -top-1/2 left-1/2 -translate-x-1/2 w-full h-[200%] bg-primary/10 blur-[60px] rounded-full opacity-0 transition-opacity duration-700 pointer-events-none;
+  }
+}
+
+/* === TYPOGRAPHY & CLIPPING FIXES === */
+.line,
+.word,
+.char {
+  display: inline-block !important;
+  overflow: visible !important;
+  /* Increased safety padding for tall characters (f, l, h) and descenders (g, j, p, q, y) */
+  padding-left: 0.05em !important;
+  padding-right: 0.05em !important;
+  /* GPU acceleration removed from global level to prevent layer explosion */
+}
+
+/* Ensure all headings and their children allow content to spill out safely */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  overflow: visible !important;
+}
+
+/* Global heading spacing and line-height safety */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow: visible !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F2F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D1D1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5F2DEE;
+}
+
+/* Lenis Smooth Scroll Styles */
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* === SWIPER FIX === */
+.swiper {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet {
+  background-color: #5F2DEE !important;
+  opacity: 0.4;
+  width: 8px;
+  height: 8px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #5F2DEE !important;
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Fix Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #5F2DEE !important;
+}
