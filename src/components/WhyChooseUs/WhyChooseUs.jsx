@@ -86,7 +86,7 @@ const FeatureCard = ({ feature, index }) => {
 export default function WhyChooseUs() {
   return (
     <section 
-      className="relative py-24 bg-[#050505] overflow-hidden min-h-[50vh] flex flex-col justify-center"
+      className="relative py-16 md:py-20 bg-[#050505] overflow-hidden flex flex-col justify-center"
       id="why-choose-us"
     >
       {/* Background Noise */}
@@ -97,7 +97,8 @@ export default function WhyChooseUs() {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
+
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,9 +109,10 @@ export default function WhyChooseUs() {
             <span className="text-primary font-bold uppercase tracking-[0.3em] text-[10px]">Technical Edge</span>
             <div className="w-8 h-[1px] bg-primary/50" />
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white uppercase tracking-tighter py-1">
+          <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-bold text-white uppercase tracking-tighter py-1 leading-[1.1]">
             Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ECLearnix?</span>
           </h2>
+
           <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto mt-4 font-medium">
             We deliver high-performance solutions engineered for the modern digital landscape.
           </p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaSearch, FaPhoneAlt, FaBars, FaTimes } from 'react-icons/fa';
+import { FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -23,18 +23,19 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
 
-      // Section Highlighting Logic - Optimized for precision
+      // Section Highlighting
       const sections = navLinks.map(link => document.getElementById(link.id));
       const viewportHeight = window.innerHeight;
-
       let currentSection = activeSection;
 
       sections.forEach(section => {
         if (section) {
           const rect = section.getBoundingClientRect();
-          // If the section's top is in the upper half of the screen
           if (rect.top < viewportHeight * 0.4 && rect.bottom > viewportHeight * 0.4) {
             currentSection = section.getAttribute('id');
           }
@@ -46,25 +47,30 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    // GSAP Entrance
     const ctx = gsap.context(() => {
-      gsap.fromTo(navRef.current,
-        { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.2 }
-      );
+      gsap.fromTo(
+  navRef.current,
+  { y: -30, opacity: 0 },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    ease: 'power3.out',
+  }
+);
     });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       ctx.revert();
     };
-  }, [activeSection]);
+  }, [scrolled, activeSection]);
 
   const scrollToSection = (id) => {
     setMobileMenu(false);
-
     if (location.pathname !== '/') {
       navigate('/#' + id);
       return;
@@ -72,144 +78,118 @@ export default function Navbar() {
 
     if (window.lenis) {
       window.lenis.scrollTo('#' + id, {
-        offset: -80,
-        duration: 1.5,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        offset: -100,
+        duration: 1.2,
       });
     } else {
       const element = document.getElementById(id);
       if (element) {
-        const offset = 80;
+        const offset = 100;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     }
   };
 
   return (
-    <div
+    <header
       ref={navRef}
-      className={`fixed left-0 right-0 z-[10000] transition-all duration-500 ${scrolled ? 'top-0' : 'top-6 md:top-10'
-        }`}
+      className={`fixed top-0 left-0 w-full z-[99999] transition-all duration-500 ${
+  scrolled
+    ? 'bg-[#050505]/70 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg'
+    : 'bg-transparent py-5'
+}`}
     >
-      <div className={`w-full relative transition-all duration-500 ${scrolled ? 'px-4 md:px-10' : 'px-4 md:px-10'}`}>
-        {/* Glow behind the bar */}
-        <div className={`absolute inset-0 bg-primary/20 blur-[100px] transition-opacity duration-700 pointer-events-none ${scrolled ? 'opacity-40' : 'opacity-0'}`} />
-
-        <nav
-          className={`relative transition-all duration-500 border-b lg:border overflow-hidden ${scrolled
-            ? 'bg-darkBg/90 backdrop-blur-xl border-white/10 shadow-xl py-5 lg:rounded-[2rem]'
-            : 'bg-white/[0.02] backdrop-blur-sm border-white/5 py-7 md:py-8 lg:rounded-[3rem]'
-            }`}
+      <div className="container mx-auto px-6 md:px-12 h-[72px] flex items-center justify-between">
+        {/* Logo Section */}
+        <Link
+          to="/"
+          onClick={() => scrollToSection('home')}
+          className="flex items-center gap-4 group shrink-0"
         >
-          <div className="px-6 md:px-10 flex justify-between items-center">
-            {/* Logo Section */}
-            <Link
-              to="/"
-              onClick={() => scrollToSection('home')}
-              className="flex items-center gap-4 group"
-            >
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] shadow-lg shadow-primary/20">
-                <span className="text-white text-xl font-black ">E</span>
-              </div>
-              <div className="flex flex-col">
-                <span style={{ fontFamily: '"Manrope", sans-serif', fontWeight: 700, fontSize: '18px' }} className="text-white tracking-tighter leading-tight">ECLearnix</span>
-                <span className="text-[9px] uppercase tracking-[0.4em] text-primary font-black -mt-0.5">Technology</span>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex gap-1 items-center">
-              {navLinks.map((link) => {
-                const isActive = activeSection === link.id;
-                return (
-                  <button
-                    key={link.name}
-                    onClick={() => scrollToSection(link.id)}
-                    className="relative px-6 py-2 group"
-                  >
-                    <span
-                      style={{
-                        fontFamily: '"Satoshi", sans-serif',
-                        fontSize: '12px',
-                        fontWeight: 800,
-                        letterSpacing: '0.15em'
-                      }}
-                      className={`relative z-10 uppercase transition-all duration-300 ${isActive ? 'text-white' : 'text-white/40 group-hover:text-white'
-                        }`}
-                    >
-                      {link.name}
-                    </span>
-
-                    {/* Active/Hover Indicator (Pill style) */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="nav-pill"
-                        className="absolute inset-0 bg-white/5 rounded-full z-0"
-                        transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                      />
-                    )}
-
-                    {/* Animated Underline */}
-                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-primary transition-all duration-300 ${isActive ? 'w-8' : 'w-0 group-hover:w-4'
-                      }`} />
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Action Area */}
-            <div className="hidden lg:flex items-center gap-8">
-              <div className="h-6 w-[1px] bg-white/10" />
-
-              <div
-                onClick={() => scrollToSection('contact')}
-                className="group flex items-center gap-4 cursor-pointer"
-              >
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 transition-all duration-500 group-hover:scale-105">
-                    <FaPhoneAlt className="text-sm" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-accent rounded-full border-2 border-darkBg shadow-[0_0_10px_#00F2FE]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[8px] uppercase tracking-[0.4em] text-white/30 font-black mb-0.5">Contact Us</span>
-                  <span style={{ fontFamily: '"Satoshi", sans-serif', fontSize: '14px', fontWeight: 800 }} className="text-white tracking-tight group-hover:text-primary transition-all duration-300">+91 1234567889</span>
-                </div>
-              </div>
-            </div>
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white shadow-xl"
-              onClick={() => setMobileMenu(true)}
-            >
-              <FaBars className="text-xl" />
-            </button>
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] shadow-lg shadow-primary/20">
+            <span className="text-white text-xl font-black">E</span>
           </div>
-        </nav>
+          <div className="flex flex-col">
+            <span className="text-white font-bold text-lg tracking-tighter leading-tight font-manrope">ECLearnix</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-primary font-black -mt-0.5">Technology</span>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex gap-2 items-center">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <button
+                key={link.name}
+                onClick={() => scrollToSection(link.id)}
+                className="relative px-5 py-2 group"
+              >
+                <span
+                  className={`relative z-10 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 font-satoshi ${
+                    isActive ? 'text-white' : 'text-white/40 group-hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </span>
+
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-white/5 rounded-full z-0"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Action Area */}
+        <div className="hidden lg:flex items-center gap-8">
+          <div className="h-6 w-[1px] bg-white/10" />
+          <a
+            href="mailto:info@eclearnix.com"
+            className="group flex items-center gap-4 cursor-pointer"
+          >
+            <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 transition-all duration-500 group-hover:scale-105">
+              <FaEnvelope className="text-sm" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[8px] uppercase tracking-[0.4em] text-white/30 font-black mb-0.5">mail us at:</span>
+              <span className="text-white text-sm font-black tracking-tight group-hover:text-primary transition-all duration-300 font-satoshi">info@eclearnix.com</span>
+            </div>
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+          onClick={() => setMobileMenu(true)}
+        >
+          <FaBars className="text-lg" />
+        </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenu && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-darkBg z-[2000] lg:hidden"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-[#050505] z-[9999] lg:hidden flex flex-col"
           >
             <div className="h-full flex flex-col p-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-20 relative z-10">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                    <span className="text-white text-xl font-black ">E</span>
+                    <span className="text-white text-xl font-black">E</span>
                   </div>
-                  <span className="text-white font-black text-2xl tracking-tighter uppercase">ECLearnix</span>
+                  <span className="text-white font-black text-2xl tracking-tighter uppercase font-manrope">ECLearnix</span>
                 </div>
                 <button
                   onClick={() => setMobileMenu(false)}
@@ -219,26 +199,37 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="flex flex-col gap-4 relative z-10">
+              <div className="flex flex-col gap-6 relative z-10">
                 {navLinks.map((link, i) => (
                   <button
                     key={link.name}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-left group"
+                    className="text-left group overflow-hidden"
                   >
-                    <span
-                      className={`text-5xl md:text-7xl font-black uppercase tracking-tighter transition-all duration-300 block ${activeSection === link.id ? 'text-primary' : 'text-white/20 group-hover:text-white'
-                        }`}
+                    <motion.span
+                      initial={{ y: 80 }}
+                      animate={{ y: 0 }}
+                      transition={{ delay: i * 0.1 + 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                      className={`text-6xl font-black uppercase tracking-tighter transition-all duration-300 block ${
+                        activeSection === link.id ? 'text-primary' : 'text-white/20 group-hover:text-white'
+                      }`}
                     >
                       {link.name}
-                    </span>
+                    </motion.span>
                   </button>
                 ))}
               </div>
+
+              <div className="mt-auto relative z-10 border-t border-white/10 pt-10">
+                 <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-black mb-4">Get in touch</p>
+                 <a href="mailto:info@eclearnix.com" className="text-white text-xl font-black hover:text-primary transition-colors">info@eclearnix.com</a>
+              </div>
             </div>
+
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </header>
   );
 }

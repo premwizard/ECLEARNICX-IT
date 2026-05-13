@@ -26,7 +26,8 @@ export default function CareersSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="section-dark py-32" id="careers">
+    <section ref={containerRef} className="section-dark py-5 md:py-7" id="careers">
+
       {/* Background Lighting */}
       <div className="glow-mesh top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/10" />
 
@@ -69,7 +70,7 @@ export default function CareersSection() {
               }}
               className="max-w-xl"
             >
-              We are always looking for passionate and talented individuals who are ready to innovate, learn, and grow with us.
+              We are looking for passionate, creative, and driven individuals who are ready to build impactful digital solutions, explore emerging technologies, and grow together with ECLearnix Technology Solutions.
             </p>
             <Link
               to="/careers"
@@ -85,10 +86,10 @@ export default function CareersSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { t: "Culture", d: "A creative, tech-driven environment." },
-              { t: "Growth", d: "Continuous learning & development." },
-              { t: "Impact", d: "Build solutions that empower globally." },
-              { t: "Innovation", d: "Where creativity meets opportunity." }
+              { t: "Culture", d: "Work in a collaborative, creative, and technology-driven environment that encourages innovation and teamwork." },
+              { t: "Growth", d: "Enhance your skills through real-world projects, continuous learning, mentorship, and career development opportunities." },
+              { t: "Impact", d: "Build meaningful digital products and solutions that create value for businesses, institutions, and users worldwide." },
+              { t: "Innovation", d: "Be part of a forward-thinking team where ideas, creativity, and modern technology come together to shape the future." }
             ].map((item, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/5 backdrop-blur-xl hover:bg-white/[0.06] transition-all duration-500">
                 <h4 style={{ fontFamily: '"Manrope", sans-serif', fontSize: '18px', fontWeight: 600 }} className="uppercase tracking-tighter mb-4 text-primary">{item.t}</h4>

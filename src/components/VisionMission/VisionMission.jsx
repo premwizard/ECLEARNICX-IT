@@ -6,8 +6,9 @@ const CharReveal = ({ text, delay = 0, color = "white", hoverColor = "primary" }
   
   return (
     <motion.h2 
-      className={`text-6xl md:text-8xl lg:text-9xl font-bold text-${color} mb-6 tracking-tighter transition-colors duration-500 group-hover:text-${hoverColor} relative`}
+      className={`text-[clamp(2.5rem,12vw,5rem)] md:text-[clamp(5rem,15vw,10rem)] font-bold text-${color} mb-4 md:mb-6 tracking-tighter transition-colors duration-500 group-hover:text-${hoverColor} relative leading-[0.9]`}
     >
+
       {characters.map((char, index) => (
         <motion.span
           key={index}
@@ -55,7 +56,7 @@ const VisionMission = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-[50vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden bg-[#050505] py-20 px-6 md:px-12 lg:px-24"
+      className="relative min-h-[40vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden bg-[#050505] py-12 md:py-16 px-6 md:px-12 lg:px-24"
     >
       {/* Cinematic Background Layer */}
       <div className="absolute inset-0 z-0">

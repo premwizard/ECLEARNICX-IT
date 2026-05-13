@@ -68,7 +68,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="app-container relative selection:bg-primary selection:text-white bg-darkBg min-h-screen">
+      <div className="app-container relative selection:bg-primary selection:text-white bg-darkBg min-h-screen overflow-x-hidden">
+
         {/* Grainy Noise Texture Overlay */}
         <div className="noise" />
 
@@ -76,7 +77,8 @@ function App() {
           <Navbar />
         </header>
 
-        <main>
+        <main className="overflow-x-hidden">
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/careers" element={<CareersPage />} />

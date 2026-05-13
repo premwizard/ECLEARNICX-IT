@@ -83,17 +83,18 @@ const ProjectSlide = memo(({ project, index }) => {
           </span>
         </div>
 
-        {/* Title with Split Animation - 'Godzilla' Scale and Solid White */}
-     <h3 className="project-title text-white text-7xl sm:text-8xl md:text-[10rem] lg:text-[16rem] xl:text-[18rem] font-extrabold leading-[0.8] mb-16 tracking-[-0.06em] uppercase py-4 overflow-visible drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
-  {project.title}
-</h3>
+        {/* Title with Split Animation - 'Godzilla' Scale with Responsive Clamping */}
+        <h3 className="project-title text-white text-[clamp(3rem,10vw,6rem)] md:text-[clamp(6rem,15vw,16rem)] font-extrabold leading-[0.8] mb-8 md:mb-16 tracking-[-0.06em] uppercase py-4 overflow-visible drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
+          {project.title}
+        </h3>
 
-        {/* Description & Details - Solid White & Massive */}
-        <div className="flex flex-col md:flex-row gap-16 items-start md:items-end">
+        {/* Description & Details - Responsive Scaling */}
+        <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start md:items-end">
           <div className="max-w-5xl">
-            <p className="project-desc text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-black leading-relaxed mb-14 drop-shadow-2xl whitespace-pre-wrap">
+            <p className="project-desc text-[clamp(1.25rem,4vw,2.5rem)] md:text-[clamp(2.5rem,5vw,4.5rem)] text-white font-black leading-relaxed mb-10 md:mb-14 drop-shadow-2xl whitespace-pre-wrap">
               {project.description}
             </p>
+
 
 
             

@@ -116,7 +116,7 @@ export default function TeamSection() {
 
   return (
     <section 
-      className="relative section-dark py-24 md:py-32 overflow-hidden" 
+      className="relative section-dark py-16 md:py-24 overflow-hidden" 
       id="team"
     >
       {/* Background Ambience */}
@@ -127,15 +127,17 @@ export default function TeamSection() {
 
       <div className="w-full relative z-10">
         {/* Compact Heading */}
-        <div className="px-6 md:px-12 lg:px-20 mb-20 text-center md:text-left flex flex-col md:flex-row items-center md:items-end justify-between gap-8">
+        <div className="px-6 md:px-12 lg:px-20 mb-12 md:mb-16 text-center md:text-left flex flex-col md:flex-row items-center md:items-end justify-between gap-8">
+
           <div className="max-w-2xl">
             <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
               <div className="w-10 h-[1px] bg-primary" />
               <span className="text-primary font-black uppercase tracking-[0.4em] text-[10px]">Team Continuity</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none py-2">
+            <h2 className="text-[clamp(2.5rem,7vw,5rem)] font-black text-white uppercase tracking-tighter leading-[1.1] py-2">
               Meet The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Team</span>
             </h2>
+
           </div>
           <p className="text-white/30 text-sm md:text-lg font-medium max-w-sm leading-relaxed mb-2">
             A seamless collective of experts scaling excellence through constant innovation.

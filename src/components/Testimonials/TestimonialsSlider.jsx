@@ -143,7 +143,7 @@ export default function TestimonialsSlider() {
   return (
     <section
       ref={containerRef}
-      className="section-light py-32 relative overflow-hidden"
+      className="section-light py-20 md:py-24 relative overflow-hidden"
       id="testimonials"
     >
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -152,13 +152,15 @@ export default function TestimonialsSlider() {
 
       <div className="w-full px-6 md:px-20 relative z-10">
         {/* Header */}
-        <div className="testimonials-header text-center mb-24 max-w-4xl mx-auto">
+        <div className="testimonials-header text-center mb-12 md:mb-16 max-w-4xl mx-auto">
           <p className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-6">Client Trust</p>
-          <h2 className="text-5xl md:text-8xl font-black text-heading uppercase tracking-tighter leading-none mb-10">
+          <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black text-heading uppercase tracking-tighter leading-[1.1] mb-10">
             What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Clients Say</span>
           </h2>
           <div className="w-24 h-[1px] bg-black/10 mx-auto" />
         </div>
+
+
 
         {/* 3D STACKED CAROUSEL */}
         <div className="relative h-[600px] md:h-[550px] flex items-center justify-center px-4 md:px-20 lg:px-40">

@@ -46,14 +46,16 @@ export default function ServicesOffering() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 bg-darkBg relative overflow-hidden">
+    <section ref={containerRef} className="py-20 md:py-24 bg-darkBg relative overflow-hidden">
+
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute inset-0 bg-noise opacity-5 pointer-events-none" />
 
       <div className="w-full px-6 md:px-12 relative z-10">
 
-        <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-20">
+        <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-12 md:mb-16">
+
           <div className="lg:w-1/2">
             <div className="srv-header-reveal flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-primary"></div>
@@ -97,23 +99,24 @@ export default function ServicesOffering() {
           </div>
         </div>
 
-        <div className="srv-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="srv-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
           {services.map((srv, i) => (
             <div
               key={i}
               ref={el => cardsRef.current[i] = el}
               className="group relative"
             >
-              <div className="h-full bg-white/[0.03] backdrop-blur-3xl p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-3 cursor-pointer flex flex-col items-start overflow-visible relative">
+              <div className="h-full bg-white/[0.03] backdrop-blur-3xl p-8 rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-3 cursor-pointer flex flex-col items-start overflow-visible relative">
                 {/* Glow on hover */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-3xl text-primary mb-10 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-3xl text-primary mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
                   {srv.icon}
                 </div>
 
                 <h3 style={{ fontFamily: '"Manrope", sans-serif', fontSize: '18px', fontWeight: 600 }} className="text-white mb-4 tracking-tight leading-[1.3] py-2 overflow-visible">{srv.title}</h3>
-                <p style={{ fontFamily: '"Satoshi", sans-serif', fontSize: '14px' }} className="text-gray-400 leading-relaxed mb-8">{srv.desc}</p>
+                <p style={{ fontFamily: '"Satoshi", sans-serif', fontSize: '14px' }} className="text-gray-400 leading-relaxed mb-6">{srv.desc}</p>
 
                 <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-primary font-bold text-xs uppercase tracking-widest">
                   Explore →

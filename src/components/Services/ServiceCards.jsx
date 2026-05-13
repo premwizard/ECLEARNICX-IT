@@ -33,19 +33,21 @@ export default function ServiceCards() {
   }, []);
 
   return (
-    <section ref={containerRef} className="section-light py-32 overflow-hidden" id="services">
+    <section ref={containerRef} className="section-light py-20 md:py-24 overflow-hidden" id="services">
       <div className="w-full px-6 md:px-20 relative z-10">
         {/* Header */}
-        <div className="max-w-4xl mb-24">
+        <div className="max-w-4xl mb-12 md:mb-16">
+
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-[2px] bg-primary"></div>
             <p className="text-primary font-black uppercase tracking-[0.4em] text-[10px]">What We Do</p>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[1.1] py-4 text-heading">
+          <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black uppercase tracking-tighter leading-[1.1] py-4 text-heading">
             End-to-End <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Digital Solutions</span>
           </h2>
         </div>
+
 
         {/* INTERACTIVE PANELS */}
         <div className="flex flex-col lg:flex-row min-h-[800px] lg:h-[600px] gap-4">

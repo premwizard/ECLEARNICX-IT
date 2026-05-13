@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -106,21 +107,23 @@ export default function CareersPage() {
 
 
   const positions = [
-    { title: "Frontend Developer", dept: "Engineering", level: "Senior", type: "Full-time", loc: "Remote / New York", desc: "Crafting immersive user experiences with React, Next.js, and GSAP." },
-    { title: "Backend Developer", dept: "Engineering", level: "Mid-Senior", type: "Full-time", loc: "London", desc: "Architecting scalable systems and robust APIs using Node.js and Python." },
-    { title: "Full Stack Developer", dept: "Engineering", level: "Senior", type: "Full-time", loc: "Singapore", desc: "Bridging the gap between design and technology across the entire stack." },
-    { title: "UI/UX Designer", dept: "Design", level: "Mid-Senior", type: "Full-time", loc: "Remote", desc: "Creating intuitive and visually stunning interfaces for global brands." },
-    { title: "Mobile App Developer", dept: "Engineering", level: "Mid", type: "Full-time", loc: "Berlin", desc: "Building high-performance native and cross-platform mobile applications." },
-    { title: "AI/ML Engineer", dept: "Research", level: "Senior", type: "Full-time", loc: "San Francisco", desc: "Implementing cutting-edge machine learning models for smart solutions." },
+    { title: "Frontend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Build responsive and interactive web applications using modern frontend frameworks and UI technologies." },
+    { title: "Backend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Develop scalable APIs, server-side applications, databases, and secure backend systems for digital platforms." },
+    { title: "Full Stack Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Work across frontend and backend technologies to build complete, high-performance web applications." },
+    { title: "UI/UX Designer", dept: "Design", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Design intuitive user experiences, modern interfaces, prototypes, and creative digital solutions for web and mobile platforms." },
+    { title: "Mobile App Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Create high-performance Android, iOS, and cross-platform mobile applications with seamless user experiences." },
+    { title: "AI & Automation Engineer", dept: "AI & Innovation", type: "Full-time", loc: "Remote / Hybrid", desc: "Develop AI-powered systems, automation workflows, intelligent chatbots, and smart digital solutions for businesses and institutions." },
+    { title: "Video Editor", dept: "Creative Media", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Create engaging video content, motion graphics, promotional reels, and digital media assets for branding and marketing campaigns." },
+    { title: "Digital Marketing Executive", dept: "Marketing", type: "Full-time", loc: "Coimbatore / Remote", desc: "Manage SEO, social media marketing, performance campaigns, content strategy, and digital growth initiatives to enhance brand visibility and engagement." },
   ];
 
   const hiringSteps = [
-    { title: "Application Submission", desc: "Send us your resume and portfolio. Let us see your best work." },
-    { title: "Initial Screening", desc: "A brief chat with our talent team to discuss your goals and values." },
-    { title: "Technical Assessment", desc: "Showcase your skills through a practical challenge or live coding." },
-    { title: "Interview Round", desc: "Deep dive into your experience with our technical and design leads." },
-    { title: "Final Selection", desc: "Meeting the founders and final culture-fit alignment." },
-    { title: "Onboarding", desc: "Welcome to the team! We'll get you set up for success from day one." },
+    { title: "Application Submission", desc: "Submit your resume, portfolio, and relevant project details to help us understand your skills and experience." },
+    { title: "Initial Screening", desc: "A quick interaction with our team to discuss your background, interests, career goals, and role expectations." },
+    { title: "Skill Assessment", desc: "Demonstrate your technical, creative, or problem-solving abilities through practical tasks or assignments related to the role." },
+    { title: "Technical Interview", desc: "A detailed discussion with our technical and creative team to evaluate your expertise, approach, and project experience." },
+    { title: "Final Discussion", desc: "Final interaction with the leadership team to assess collaboration, communication, and organizational fit." },
+    { title: "Onboarding", desc: "Welcome to ECLearnix Technology Solutions — we help you get started with the right tools, guidance, and support for success." },
   ];
 
 
@@ -160,16 +163,16 @@ export default function CareersPage() {
         <div className="container mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-up">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70">Work With Us</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70">JOIN OUR TEAM</span>
           </div>
 
-          <h1 className="hero-title text-6xl md:text-[120px] font-black uppercase tracking-tighter leading-[1.1] mb-8 py-10 overflow-visible text-white">
-            <span className="inline-block">Join</span> <br />
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Our Team</span>
+          <h1 className="hero-title text-6xl md:text-[100px] lg:text-[120px] font-black uppercase tracking-tighter leading-[1.1] mb-8 py-10 overflow-visible text-white">
+            <span className="inline-block">Join the</span> <br />
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Innovation</span>
           </h1>
 
-          <p className="hero-sub text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-            We are always looking for passionate and talented individuals who are ready to innovate, learn, and grow with us. Become part of a technology-driven environment where creativity meets opportunity.
+          <p className="hero-sub text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
+            We are looking for passionate, creative, and driven individuals who are ready to build impactful digital solutions, explore emerging technologies, and grow together with ECLearnix Technology Solutions.
           </p>
 
           <div className="hero-cta flex flex-wrap justify-center gap-6">
@@ -205,44 +208,60 @@ export default function CareersPage() {
 
 
 
-      {/* 3. OPEN POSITIONS SECTION (DARK) */}
       <section id="openings" className="career-section py-32 px-6 section-dark">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 animate-up">
-            <div className="max-w-2xl">
-              <p className="text-primary font-black uppercase tracking-[0.4em] text-xs mb-4">Current Opportunities</p>
-              <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6 text-white">Open Positions</h2>
-              <p className="text-white/80 text-lg font-medium">Be part of something bigger. Join a team that's building the future of technology solutions.</p>
-            </div>
-            <div className="flex gap-4">
-              <button className="px-6 py-3 rounded-xl bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest border border-primary/20">All Departments</button>
-            </div>
+          <div className="text-center mb-24 animate-up">
+            <p className="text-primary font-black uppercase tracking-[0.4em] text-xs mb-4">CURRENT OPPORTUNITIES</p>
+            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8 text-white">Open Positions</h2>
+            <p className="text-white/60 text-lg md:text-xl font-medium max-w-4xl mx-auto leading-relaxed">
+              Join ECLearnix Technology Solutions and work on innovative digital products, AI-powered platforms, scalable applications, and creative technology solutions.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {positions.map((job, i) => (
-              <div key={i} className="animate-up group relative p-8 md:p-12 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 flex flex-col md:flex-row md:items-center justify-between gap-8">
-                <div className="flex-1">
-                  <div className="flex flex-wrap gap-3 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest">{job.dept}</span>
-                    <span className="px-3 py-1 rounded-full bg-white/10 text-white/70 text-[10px] font-black uppercase tracking-widest">{job.type}</span>
-                    <span className="px-3 py-1 rounded-full bg-white/10 text-white/70 text-[10px] font-black uppercase tracking-widest">{job.loc}</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-primary transition-colors">{job.title}</h3>
-                  <p className="text-white/80 max-w-xl text-sm font-medium">{job.desc}</p>
-                </div>
+              <motion.div 
+                key={i} 
+                whileHover={{ y: -10 }}
+                className="animate-up group relative p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-primary/20 transition-all duration-500 flex flex-col justify-between"
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
                 <div>
-                  <button className="w-full md:w-auto px-8 py-4 rounded-xl bg-white text-black font-black text-[10px] uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all duration-500">
-                    View Details
-                  </button>
+                  <div className="flex justify-between items-start mb-8">
+                    <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/10">
+                      {job.dept}
+                    </span>
+                    <FiBriefcase className="text-white/20 group-hover:text-primary transition-colors duration-500" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-black uppercase tracking-tighter mb-4 text-white group-hover:text-primary transition-colors duration-300">
+                    {job.title}
+                  </h3>
+                  
+                  <div className="flex flex-wrap gap-4 mb-6">
+                    <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
+                      <FiClock className="text-primary/60" /> {job.type}
+                    </div>
+                    <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
+                      <FiGlobe className="text-primary/60" /> {job.loc}
+                    </div>
+                  </div>
+                  
+                  <p className="text-white/50 text-sm leading-relaxed mb-10 group-hover:text-white/70 transition-colors">
+                    {job.desc}
+                  </p>
                 </div>
-              </div>
+
+                <button className="w-full py-4 rounded-xl bg-white/5 border border-white/10 text-white font-black text-[10px] uppercase tracking-[0.2em] group-hover:bg-white group-hover:text-black transition-all duration-500 flex items-center justify-center gap-3">
+                  View Details <FiArrowUpRight />
+                </button>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. HIRING PROCESS SECTION (LIGHT) */}
       <section id="process" className="career-section py-32 px-6 relative overflow-hidden section-light">
         <div className="container mx-auto">
           <div className="text-center mb-24 animate-up">
@@ -251,27 +270,49 @@ export default function CareersPage() {
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
 
-          <div className="relative">
-            {/* Connection Line */}
-            <div className="absolute top-0 left-8 md:left-1/2 w-[1px] h-full bg-gradient-to-b from-primary via-secondary to-transparent opacity-20 hidden md:block" />
+          <div className="relative max-w-5xl mx-auto">
+            {/* Animated Connection Line */}
+            <div className="absolute top-0 left-8 md:left-1/2 w-[2px] h-full bg-gray-100 hidden md:block">
+              <motion.div 
+                className="w-full bg-primary origin-top"
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+            </div>
 
-            <div className="grid gap-12">
+            <div className="grid gap-20">
               {hiringSteps.map((step, i) => (
-                <div key={i} className={`animate-up flex flex-col md:flex-row items-center gap-8 md:gap-20 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 w-full md:text-left text-center">
-                    <div className={`p-8 md:p-12 rounded-[2.5rem] bg-white border border-black/5 shadow-xl relative transition-all duration-500 hover:bg-gray-50 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <span className="text-7xl font-black text-black/5 absolute top-4 right-8 pointer-events-none">0{i + 1}</span>
-                      <h4 className="text-2xl font-black uppercase tracking-tighter mb-4 text-heading">{step.title}</h4>
-                      <p className="text-bodyText font-medium leading-relaxed">{step.desc}</p>
-                    </div>
+                <div key={i} className={`flex flex-col md:flex-row items-center gap-8 md:gap-20 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Content Card */}
+                  <div className="flex-1 w-full animate-up">
+                    <motion.div 
+                      whileHover={{ scale: 1.02 }}
+                      className={`p-8 md:p-10 rounded-[2.5rem] bg-white border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative group transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] ${i % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}
+                    >
+                      <span className="text-8xl font-black text-primary/5 absolute top-4 right-8 pointer-events-none group-hover:text-primary/10 transition-colors">
+                        0{i + 1}
+                      </span>
+                      <h4 className="text-2xl font-black uppercase tracking-tighter mb-4 text-heading relative z-10">{step.title}</h4>
+                      <p className="text-bodyText font-medium leading-relaxed relative z-10">{step.desc}</p>
+                    </motion.div>
                   </div>
 
+                  {/* Icon/Number Marker */}
                   <div className="relative z-10 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-2xl bg-white border-2 border-primary flex items-center justify-center text-primary font-black text-xl shadow-[0_0_30px_rgba(95,45,238,0.2)]">
+                    <motion.div 
+                      initial={{ scale: 0, rotate: -45 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                      className="w-16 h-16 rounded-2xl bg-white border-2 border-primary flex items-center justify-center text-primary font-black text-xl shadow-[0_0_30px_rgba(95,45,238,0.2)]"
+                    >
                       {i + 1}
-                    </div>
+                    </motion.div>
                   </div>
 
+                  {/* Empty Spacer for desktop */}
                   <div className="flex-1 hidden md:block" />
                 </div>
               ))}
@@ -299,7 +340,7 @@ export default function CareersPage() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-1">Email our HR</p>
-                      <p className="text-white font-bold">careers@eclearnix.io</p>
+                      <p className="text-white font-bold">hreclearnix@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-6 group">
@@ -308,7 +349,7 @@ export default function CareersPage() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold mb-1">Call for inquiries</p>
-                      <p className="text-white font-bold">+91 1234567889</p>
+                      <p className="text-white font-bold">+91 63790 16441</p>
                     </div>
                   </div>
                 </div>
@@ -332,15 +373,30 @@ export default function CareersPage() {
                   </div>
                 </div>
 
-                <div className="group">
-                  <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Position Applying For</label>
-                  <div className="relative">
-                    <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
-                      <option className="bg-darkBg">Select a position</option>
-                      {positions.map(p => <option key={p.title} className="bg-darkBg">{p.title}</option>)}
-                      <option className="bg-darkBg">Other / General Application</option>
-                    </select>
-                    <FiBriefcase className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Position Applying For</label>
+                    <div className="relative">
+                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
+                        <option className="bg-darkBg">Select a position</option>
+                        {positions.map(p => <option key={p.title} className="bg-darkBg">{p.title}</option>)}
+                        <option className="bg-darkBg">Other / General Application</option>
+                      </select>
+                      <FiBriefcase className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
+                    </div>
+                  </div>
+                  <div className="group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Select Role Type</label>
+                    <div className="relative">
+                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
+                        <option className="bg-darkBg">Select Role Type</option>
+                        <option className="bg-darkBg">Intern</option>
+                        <option className="bg-darkBg">Trainee</option>
+                        <option className="bg-darkBg">Employee</option>
+                        <option className="bg-darkBg">Freelancer</option>
+                      </select>
+                      <FiLayers className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
+                    </div>
                   </div>
                 </div>
 

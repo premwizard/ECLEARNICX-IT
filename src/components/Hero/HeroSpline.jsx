@@ -41,10 +41,10 @@ const HeroHeading = memo(({ headingRef }) => (
     ref={headingRef}
     style={{
       fontFamily: '"Manrope", sans-serif',
-      fontSize: 'clamp(36px, 5vw, 64px)',
-      fontWeight: 700,
+      fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+      fontWeight: 800,
       color: '#ffffff',
-      lineHeight: 1.3,
+      lineHeight: 1.1,
       textTransform: 'uppercase',
       margin: '0 0 30px 0',
       overflow: 'visible',
@@ -52,9 +52,9 @@ const HeroHeading = memo(({ headingRef }) => (
     }}
     className="perspective-[1000px]"
   >
-     Unlock the power of AI for your business <br className="hidden md:block" /> 
-    <span className="text-highlight py-4 overflow-visible min-w-max"> with
-ECLEARNIX TECHNOLOGY SOLUTIONS</span>
+     ENGINEERING THE FUTURE WITH <br className="hidden md:block" /> 
+    <span className="text-highlight py-4 overflow-visible inline-block">
+INTELLIGENT DIGITAL SOLUTIONS</span>
   </h1>
 ))
 
@@ -185,11 +185,11 @@ export default function HeroSpline() {
 
         <HeroHeading headingRef={headingRef} />
 
-        <p className="hero-reveal max-w-5xl mx-auto text-white/90 leading-relaxed mb-14 text-center text-[19px] font-black">
-          At ECLearnix Technology Solutions, we build innovative, scalable, and future-ready technology 
-          solutions for businesses, startups, educational institutions, and enterprises. 
-          From software development to digital transformation, we help organizations streamline 
-          operations, improve customer experiences, and accelerate growth through technology.
+        <p className="hero-reveal max-w-5xl mx-auto text-white/90 leading-relaxed mb-10 md:mb-14 text-center text-[clamp(1rem,3vw,1.25rem)] font-black px-4">
+          At ECLearnix Technology Solutions, we empower businesses, startups, educational institutions, and enterprises 
+          with cutting-edge technology services designed for innovation, scalability, and growth. From AI-powered automation 
+          to cloud infrastructure, creative digital experiences, and business-focused software solutions, we help organizations 
+          transform ideas into impactful digital products.
         </p>
 
         {/* Floating UI Elements */}
