@@ -4,15 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#5F2DEE',
-        secondary: '#B882FC',
-        heading: '#1D1729',
-        bodyText: '#6C6A72',
-        light: '#E4E0EE',
-        background: '#F4F2F9',
-        dark: '#15101E',
-        darkBg: '#1D1729',
-        accent: '#acf100',
+        primary: '#3D00B8',
+        secondary: '#A8DAFF',
+        heading: '#0A0820',
+        bodyText: '#8899BB',
+        light: '#C8D5FF',
+        background: '#F5F7FF',
+        dark: '#070515',
+        darkBg: '#0A0820',
+        accent: '#A8DAFF',
+        surface: '#EEEEF8',
+        darkSurface: '#130D35',
+        secondaryGradient: '#6B35E8',
       },
       // ADD THIS FONT FAMILY SECTION
       fontFamily: {

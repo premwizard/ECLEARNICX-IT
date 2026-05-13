@@ -3,7 +3,7 @@ import { FaCheck } from 'react-icons/fa';
 
 export default function CTABanner() {
   return (
-    <section className="py-20 relative overflow-hidden bg-gradient-to-r from-secondary to-primary">
+    <section className="py-20 relative overflow-hidden bg-gradient-to-r from-secondaryGradient to-primary">
       <div className="absolute inset-0 bg-[url('https://picsum.photos/id/1020/1920/1080')] opacity-15 mix-blend-luminosity"></div>
       <div className="w-full px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/4 flex justify-center">

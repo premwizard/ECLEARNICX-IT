@@ -74,22 +74,66 @@ const AboutSection = () => {
             </svg>
           </div>
 
-          <div className="w-full grid lg:grid-cols-[32%_62%] justify-between gap-10 items-center">
+          <div className="w-full grid lg:grid-cols-[38%_58%] justify-between gap-12 items-start">
             
-            {/* Left Content - Shifted Further Left */}
-            <div ref={leftContentRef} className="relative z-10 order-2 lg:order-1">
-              <div className="about-fade-up inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.4em] uppercase mb-4">
-                <span className="opacity-100">ABOUT US</span> </div>
+            {/* Left Content - Realigned to Top */}
+            <div ref={leftContentRef} className="relative z-10 order-2 lg:order-1 pt-4 lg:pt-0">
+              <div className="about-fade-up text-primary font-black text-[clamp(1.2rem,2.5vw,1.8rem)] tracking-[0.2em] uppercase mb-6">
+                ABOUT US
+              </div>
               
-              <h2 className="about-fade-up text-[clamp(2rem,6vw,4.5rem)] font-bold text-[#1D1729] leading-[1.05] tracking-tight mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 py-2 inline-block overflow-visible">
+              <h2 className="about-fade-up text-[clamp(2.5rem,5vw,5rem)] font-extrabold text-[#0A0820] leading-[1.1] tracking-tighter mb-10">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6B35E8] to-[#3D00B8] py-2 inline-block overflow-visible">
                   Pioneers of cross-channel customer journey intelligence
                 </span>
               </h2>
 
-              <p className="about-fade-up text-gray-500 text-base md:text-[18px] leading-relaxed mb-8 max-w-xl font-medium">
-                We're building the future by learning from the past. Since the early days of online retail, we've captured the voice of the customer. We've learned to adapt, innovate, and refine our approach.
+              <p className="about-fade-up text-gray-500 text-lg md:text-xl lg:text-[22px] leading-[1.6] mb-12 max-w-2xl font-medium">
+                We're building the future by learning from the past. Since the early days of online retail, we've captured the voice of the customer. We've learned to adapt, innovate, and refine our approach to empower businesses with actionable intelligence and scalable technology solutions.
               </p>
+
+              {/* Core Pillars Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div className="about-fade-up group">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                      <FiPlay size={18} />
+                    </div>
+                    <h4 className="text-xl font-bold text-[#0A0820]">Innovation Driven</h4>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed pl-14">
+                    Leveraging cutting-edge AI and automation to solve complex enterprise challenges.
+                  </p>
+                </div>
+
+                <div className="about-fade-up group">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                      <FiArrowUpRight size={18} />
+                    </div>
+                    <h4 className="text-xl font-bold text-[#0A0820]">Global Scalability</h4>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed pl-14">
+                    Architecting systems that grow seamlessly with your business across global markets.
+                  </p>
+                </div>
+              </div>
+
+              {/* Quick Stats Banner */}
+              <div className="about-fade-up flex flex-wrap items-center gap-10 md:gap-20 pt-8 border-t border-gray-100">
+                <div>
+                  <div className="text-4xl font-black text-[#0A0820] mb-1">120+</div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Tech Experts</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-black text-[#0A0820] mb-1">500+</div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Projects Done</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-black text-[#0A0820] mb-1">99%</div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Client Success</div>
+                </div>
+              </div>
 
 
             </div>

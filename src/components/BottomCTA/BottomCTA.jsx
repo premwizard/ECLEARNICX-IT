@@ -12,7 +12,7 @@ export default function BottomCTA() {
         <p style={{ fontFamily: '"Manrope", sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '4px' }} className="text-primary uppercase mb-6">Let’s Build the Future Together</p>
         <h2 style={{ fontFamily: '"Manrope", sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 700 }} className="text-heading leading-[1.3] uppercase tracking-tighter mb-6 md:mb-10 max-w-4xl py-4 overflow-visible">
 
-          Looking for reliable <br /> IT solutions for your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary  py-2 inline-block overflow-visible">business?</span>
+          Looking for reliable <br /> IT solutions for your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient  py-2 inline-block overflow-visible">business?</span>
         </h2>
         <p style={{ fontFamily: '"Inter", sans-serif', fontSize: '15px' }} className="text-bodyText/60 max-w-2xl mb-12 leading-relaxed font-medium">
           Partner with ECLearnix Technology Solutions to transform your ideas into powerful digital products and scalable business solutions.

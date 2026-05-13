@@ -152,7 +152,7 @@ export default function CareersPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/assets/careers/hero-bg.png"
+            src="public/images/image copy.png"
             alt="Careers Hero"
             className="w-full h-full object-cover opacity-90"
           />
@@ -168,7 +168,7 @@ export default function CareersPage() {
 
           <h1 className="hero-title text-6xl md:text-[100px] lg:text-[120px] font-black uppercase tracking-tighter leading-[1.1] mb-8 py-10 overflow-visible text-white">
             <span className="inline-block">Join the</span> <br />
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Innovation</span>
+            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Innovation</span>
           </h1>
 
           <p className="hero-sub text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
@@ -178,7 +178,7 @@ export default function CareersPage() {
           <div className="hero-cta flex flex-wrap justify-center gap-6">
             <button
               onClick={() => document.getElementById('openings').scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-10 py-5 bg-primary text-white font-black text-xs uppercase tracking-[0.3em] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(95,45,238,0.4)]"
+              className="group relative px-10 py-5 bg-primary text-white font-black text-xs uppercase tracking-[0.3em] rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(61,0,184,0.4)]"
             >
               <span className="relative z-10 flex items-center gap-3">
                 View Open Positions <FiArrowUpRight size={18} />
@@ -199,11 +199,6 @@ export default function CareersPage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
-          <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-white">Scroll</span>
-          <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent" />
-        </div>
       </section>
 
 
@@ -306,7 +301,7 @@ export default function CareersPage() {
                       whileInView={{ scale: 1, rotate: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                      className="w-16 h-16 rounded-2xl bg-white border-2 border-primary flex items-center justify-center text-primary font-black text-xl shadow-[0_0_30px_rgba(95,45,238,0.2)]"
+                      className="w-16 h-16 rounded-2xl bg-white border-2 border-primary flex items-center justify-center text-primary font-black text-xl shadow-[0_0_30px_rgba(61,0,184,0.2)]"
                     >
                       {i + 1}
                     </motion.div>
@@ -424,7 +419,7 @@ export default function CareersPage() {
                   <textarea rows="4" placeholder="Tell us about yourself..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300 resize-none"></textarea>
                 </div>
 
-                <button type="submit" className="w-full py-5 rounded-2xl bg-primary text-white font-black text-xs uppercase tracking-[0.4em] shadow-[0_20px_40px_rgba(95,45,238,0.3)] hover:shadow-[0_25px_50px_rgba(95,45,238,0.5)] hover:-translate-y-1 transition-all duration-500">
+                <button type="submit" className="w-full py-5 rounded-2xl bg-primary text-white font-black text-xs uppercase tracking-[0.4em] shadow-[0_20px_40px_rgba(61,0,184,0.3)] hover:shadow-[0_25px_50px_rgba(61,0,184,0.5)] hover:-translate-y-1 transition-all duration-500">
                   Submit Application
                 </button>
               </form>
@@ -437,7 +432,7 @@ export default function CareersPage() {
       <section className="career-section py-32 px-6 relative overflow-hidden section-light">
         <div className="container mx-auto text-center relative z-10">
           <div className="animate-up max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-tight mb-8 text-heading py-6 overflow-visible">Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Future</span> With Us</h2>
+            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-tight mb-8 text-heading py-6 overflow-visible">Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Future</span> With Us</h2>
             <p className="text-bodyText text-xl md:text-2xl font-medium mb-12 max-w-2xl mx-auto">
               Join ECLearnix Technology Solutions and become part of a team shaping innovative digital experiences.
             </p>

@@ -98,7 +98,7 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 w-full z-[99999] transition-all duration-500 ${
   scrolled
-    ? 'bg-[#050505]/70 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg'
+    ? 'bg-[#0A0820]/70 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg'
     : 'bg-transparent py-5'
 }`}
     >
@@ -182,7 +182,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-[#050505] z-[9999] lg:hidden flex flex-col"
+            className="fixed inset-0 bg-[#0A0820] z-[9999] lg:hidden flex flex-col"
           >
             <div className="h-full flex flex-col p-10 relative overflow-hidden">
               <div className="flex justify-between items-center mb-20 relative z-10">

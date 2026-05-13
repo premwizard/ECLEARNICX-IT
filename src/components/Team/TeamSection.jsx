@@ -135,7 +135,7 @@ export default function TeamSection() {
               <span className="text-primary font-black uppercase tracking-[0.4em] text-[10px]">Team Continuity</span>
             </div>
             <h2 className="text-[clamp(2.5rem,7vw,5rem)] font-black text-white uppercase tracking-tighter leading-[1.1] py-2">
-              Meet The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Team</span>
+              Meet The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient">Team</span>
             </h2>
 
           </div>
@@ -147,8 +147,8 @@ export default function TeamSection() {
         {/* Infinite Looping Carousel */}
         <div className="relative">
           {/* Side Fades for Seamlessness */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#05020D] to-transparent z-20 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#05020D] to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0820] to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0A0820] to-transparent z-20 pointer-events-none" />
 
           <div className="overflow-hidden py-10">
             <motion.div 

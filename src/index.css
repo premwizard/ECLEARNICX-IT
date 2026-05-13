@@ -81,7 +81,7 @@ h6 {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  color: #1D1729;
+  color: #0A0820;
 }
 
 /* Specific heading weights */
@@ -187,18 +187,20 @@ h6 {
 
 @layer base {
   :root {
-    --primary: #5F2DEE;
-    --primary-rgb: 95, 45, 238;
-    --secondary: #B882FC;
-    --secondary-rgb: 184, 130, 252;
-    --accent: #acf100;
-    --dark-bg: #110D1A;
-    --light-bg: #F4F2F9;
-    --heading-light: #1D1729;
-    --heading-dark: #FFFFFF;
-    --body-light: #6C6A72;
-    --body-dark: #A09DB1;
-    --border: rgba(255, 255, 255, 0.1);
+    --primary: #3D00B8;
+    --primary-rgb: 61, 0, 184;
+    --secondary: #A8DAFF;
+    --secondary-rgb: 168, 218, 255;
+    --accent: #A8DAFF;
+    --dark-bg: #070515;
+    --light-bg: #F5F7FF;
+    --heading-light: #0A0820;
+    --heading-dark: #F0F4FF;
+    --body-light: #8899BB;
+    --body-dark: #A8DAFF;
+    --border: #C8D5FF;
+    --surface: #EEEEF8;
+    --dark-surface: #130D35;
   }
 
   html {
@@ -207,7 +209,7 @@ h6 {
   }
 
   body {
-    @apply font-sans antialiased bg-[#F4F2F9] text-[#6C6A72];
+    @apply font-sans antialiased bg-[#F5F7FF] text-[#8899BB];
     overflow-x: hidden;
   }
 
@@ -217,34 +219,14 @@ h6 {
   h4,
   h5,
   h6 {
-    @apply font-bold text-[#1D1729];
+    @apply font-bold text-[#0A0820];
     font-family: 'Manrope', sans-serif;
   }
 }
 
 @layer components {
-  .section-dark-deep {
-    @apply bg-[#05020D] text-[#A09DB1] relative overflow-hidden;
-  }
-
-  .section-dark-elevated {
-    @apply bg-[#120F1F] text-[#A09DB1] relative overflow-hidden;
-  }
-
-  .section-dark-navy {
-    @apply bg-[#0B1220] text-[#A09DB1] relative overflow-hidden;
-  }
-
-  .section-dark-purple {
-    @apply bg-[#161224] text-[#A09DB1] relative overflow-hidden;
-  }
-
-  .section-dark-gray {
-    @apply bg-[#10131A] text-[#A09DB1] relative overflow-hidden;
-  }
-
-  .section-dark-violet {
-    @apply bg-[#171420] text-[#A09DB1] relative overflow-hidden;
+  .section-dark {
+    @apply bg-[#0A0820] text-white relative overflow-hidden;
   }
 
   /* Universal heading styles for all dark variants */
@@ -256,17 +238,14 @@ h6 {
   }
 
   .section-light {
-    @apply bg-[#F4F2F9] text-[#6C6A72] relative overflow-hidden;
+    @apply bg-[#F5F7FF] text-[#8899BB] relative overflow-hidden;
   }
 
   .section-light h1,
   .section-light h2,
+  .section-light h3,
   .section-light h4 {
-    @apply text-[#1D1729];
-  }
-
-  .section-light h3 {
-    @apply text-[#ffffff];
+    @apply text-[#0A0820];
   }
 
   /* Section Transition Overlays */
@@ -371,7 +350,7 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5F2DEE;
+  background: #3D00B8;
 }
 
 /* Lenis Smooth Scroll Styles */
@@ -400,14 +379,14 @@ h6 {
 
 /* Pagination dots */
 .swiper-pagination-bullet {
-  background-color: #5F2DEE !important;
+  background-color: #3D00B8 !important;
   opacity: 0.4;
   width: 8px;
   height: 8px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #5F2DEE !important;
+  background-color: #3D00B8 !important;
   opacity: 1;
   width: 24px;
   border-radius: 4px;
@@ -416,5 +395,5 @@ h6 {
 /* Fix Swiper navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #5F2DEE !important;
+  color: #3D00B8 !important;
 }

@@ -65,7 +65,7 @@ export default function ServicesOffering() {
                 fontWeight: 600,
                 letterSpacing: '4px',
                 textTransform: 'uppercase',
-                color: '#5F2DEE',
+                color: '#3D00B8',
               }}>Technical Ecosystem</p>
             </div>
             <h2
@@ -81,7 +81,7 @@ export default function ServicesOffering() {
               }}
               className="srv-header-reveal tracking-tighter"
             >
-              Dealing in all <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary  py-2 inline-block overflow-visible">Premium</span> IT Services.
+              Dealing in all <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient  py-2 inline-block overflow-visible">Premium</span> IT Services.
             </h2>
           </div>
           <div className="srv-header-reveal lg:w-1/3">

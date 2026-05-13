@@ -15,14 +15,14 @@ const FloatingUICard = memo(({ icon: Icon, title, val, delay, className }) => (
     transition={{ duration: 1, delay, ease: "circOut" }}
     className={`absolute z-30 p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl flex items-center gap-4 group hover:bg-white/[0.08] transition-colors pointer-events-none md:pointer-events-auto ${className}`}
   >
-    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#B882FC] to-[#5F2DEE] flex items-center justify-center text-white shadow-lg shadow-[#5F2DEE]/20 group-hover:scale-110 transition-transform">
+    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#A8DAFF] to-[#3D00B8] flex items-center justify-center text-white shadow-lg shadow-[#3D00B8]/20 group-hover:scale-110 transition-transform">
       <Icon size={20} />
     </div>
     <div>
       <div className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black mb-0.5">{title}</div>
       <div className="text-sm font-black text-white uppercase tracking-tighter">{val}</div>
     </div>
-    <div className="ml-2 w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[#B882FC]">
+    <div className="ml-2 w-5 h-5 rounded-full bg-white/5 flex items-center justify-center text-[#A8DAFF]">
       <FiCheck size={12} />
     </div>
   </motion.div>
@@ -30,8 +30,8 @@ const FloatingUICard = memo(({ icon: Icon, title, val, delay, className }) => (
 
 const MeshBackground = memo(() => (
   <div className="absolute inset-0 z-0 overflow-hidden opacity-30 pointer-events-none">
-    <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#B882FC] blur-[120px] rounded-full opacity-10 animate-pulse" />
-    <div className="absolute bottom-[-5%] right-[-5%] w-[35%] h-[35%] bg-[#5F2DEE] blur-[120px] rounded-full opacity-10 animate-pulse" style={{ animationDelay: '3s' }} />
+    <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#A8DAFF] blur-[120px] rounded-full opacity-10 animate-pulse" />
+    <div className="absolute bottom-[-5%] right-[-5%] w-[35%] h-[35%] bg-[#3D00B8] blur-[120px] rounded-full opacity-10 animate-pulse" style={{ animationDelay: '3s' }} />
   </div>
 ))
 
@@ -157,19 +157,19 @@ export default function HeroSpline() {
   }, [isLoaded])
 
   return (
-    <section ref={containerRef} id="home" className="relative bg-[#05020D] h-screen overflow-hidden w-full">
+    <section ref={containerRef} id="home" className="relative bg-[#0A0820] h-screen overflow-hidden w-full">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           ref={imageRef}
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop"
+          src="/images/image.png"
           alt="ECLearnix Tech"
           className="w-full h-full object-cover opacity-85 scale-105"
           style={{ willChange: 'transform' }}
         />
         <MeshBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#05020D]/60 via-transparent to-[#05020D]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#05020D]/40 via-transparent to-[#05020D]/10" />
-        <div className="absolute inset-0 bg-[#05020D]/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0820]/60 via-transparent to-[#0A0820]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0820]/40 via-transparent to-[#0A0820]/10" />
+        <div className="absolute inset-0 bg-[#0A0820]/20" />
       </div>
 
       <motion.div 
@@ -177,8 +177,8 @@ export default function HeroSpline() {
         className="relative z-10 h-full flex flex-col items-center justify-center px-6 md:px-12 text-center w-full overflow-visible"
       >
         <div className="hero-reveal inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-12">
-          <FiZap className="text-[#B882FC] shadow-[0_0_15px_#B882FC]" />
-          <span className="text-[12px] font-semibold tracking-[5px] uppercase text-[#B882FC]">
+          <FiZap className="text-[#A8DAFF] shadow-[0_0_15px_#A8DAFF]" />
+          <span className="text-[12px] font-semibold tracking-[5px] uppercase text-[#A8DAFF]">
             Empowering Businesses with Smart IT Solutions
           </span>
         </div>

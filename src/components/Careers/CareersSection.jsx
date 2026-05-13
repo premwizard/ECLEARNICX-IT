@@ -40,7 +40,7 @@ export default function CareersSection() {
               fontWeight: 600,
               letterSpacing: '4px',
               textTransform: 'uppercase',
-              color: '#5F2DEE',
+              color: '#3D00B8',
               marginBottom: '32px'
             }}>Join Our Team</p>
             <h2
@@ -57,7 +57,7 @@ export default function CareersSection() {
               }}
               className="tracking-tighter"
             >
-              Join the <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary  text-rendering-sharp py-2 inline-block overflow-visible">Innovation</span>
+              Join the <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient  text-rendering-sharp py-2 inline-block overflow-visible">Innovation</span>
             </h2>
             <p
               style={{

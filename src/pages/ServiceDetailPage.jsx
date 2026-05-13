@@ -146,7 +146,7 @@ export default function ServiceDetailPage() {
             <div className="max-w-2xl">
               <p className="text-primary font-black uppercase tracking-[0.4em] text-[10px] uppercase mb-6">Expertise</p>
               <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none text-heading">
-                Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Specialties</span>
+                Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Specialties</span>
               </h2>
             </div>
             <p className="text-bodyText max-w-sm font-medium leading-relaxed">
@@ -180,7 +180,7 @@ export default function ServiceDetailPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <p className="text-secondary font-black tracking-[0.4em] text-[10px] uppercase mb-6">Our Workflow</p>
-            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">The <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary ">Process</span></h2>
+            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white">The <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondaryGradient to-primary ">Process</span></h2>
           </div>
 
           <div className="grid md:grid-cols-5 gap-8">
@@ -204,7 +204,7 @@ export default function ServiceDetailPage() {
           <div className="md:w-1/2">
             <div className="p-12 rounded-[3rem] bg-white border border-black/5 shadow-2xl relative overflow-hidden group">
               <FiCpu className="absolute -top-10 -right-10 text-[200px] text-primary/5 group-hover:text-primary/10 transition-all duration-1000" />
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none text-heading">Powered by <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Innovation</span></h2>
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none text-heading">Powered by <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Innovation</span></h2>
               <p className="text-bodyText text-xl font-medium leading-relaxed">
                 We use the world’s most advanced technologies to ensure your project is built for the future.
               </p>
@@ -225,7 +225,7 @@ export default function ServiceDetailPage() {
       <section className="py-32 px-6 md:px-20 relative overflow-hidden section-dark bg-gradient-to-b from-darkBg to-black">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-12 leading-none text-white">
-            Scale Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Digital Future</span> Today
+            Scale Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Digital Future</span> Today
           </h2>
           <p className="text-xl text-white/50 mb-16 max-w-2xl mx-auto font-medium">
             Let’s discuss how our {service.title} expertise can help you achieve your goals and transform your business operations.

@@ -66,7 +66,7 @@ const ProjectSlide = memo(({ project, index }) => {
         {/* Cinematic Overlays */}
         {/* Refined Minimal Overlays for Maximum Clarity */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#05020D] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0820] via-transparent to-transparent" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
       </div>
 

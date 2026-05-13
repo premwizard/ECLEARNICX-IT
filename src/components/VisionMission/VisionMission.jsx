@@ -56,7 +56,7 @@ const VisionMission = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-[40vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden bg-[#050505] py-12 md:py-16 px-6 md:px-12 lg:px-24"
+      className="relative min-h-[40vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden bg-[#0A0820] py-12 md:py-16 px-6 md:px-12 lg:px-24"
     >
       {/* Cinematic Background Layer */}
       <div className="absolute inset-0 z-0">

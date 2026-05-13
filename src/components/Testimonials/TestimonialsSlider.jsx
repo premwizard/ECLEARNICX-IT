@@ -12,7 +12,7 @@ const testimonials = [
     content: "From website development to automation solutions, the team delivered high-quality work with excellent communication and timely execution. Highly recommended for IT services.",
     name: "Dr. C. Somu",
     role: "Manager",
-    gradient: "from-[#5F2DEE] to-[#B882FC]"
+    gradient: "from-[#3D00B8] to-[#A8DAFF]"
   },
   {
     id: 2,
@@ -155,7 +155,7 @@ export default function TestimonialsSlider() {
         <div className="testimonials-header text-center mb-12 md:mb-16 max-w-4xl mx-auto">
           <p className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-6">Client Trust</p>
           <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black text-heading uppercase tracking-tighter leading-[1.1] mb-10">
-            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Clients Say</span>
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Clients Say</span>
           </h2>
           <div className="w-24 h-[1px] bg-black/10 mx-auto" />
         </div>
@@ -202,7 +202,7 @@ export default function TestimonialsSlider() {
             {testimonials.map((_, i) => (
               <div
                 key={i}
-                className={`h-1.5 rounded-full transition-all duration-700 ${i === activeIndex ? 'w-16 bg-primary shadow-[0_0_15px_#5F2DEE]' : 'w-4 bg-black/10'}`}
+                className={`h-1.5 rounded-full transition-all duration-700 ${i === activeIndex ? 'w-16 bg-primary shadow-[0_0_15px_#3D00B8]' : 'w-4 bg-black/10'}`}
               />
             ))}
           </div>

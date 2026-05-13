@@ -44,7 +44,7 @@ export default function ServiceCards() {
           </div>
           <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black uppercase tracking-tighter leading-[1.1] py-4 text-heading">
             End-to-End <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary ">Digital Solutions</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Digital Solutions</span>
           </h2>
         </div>
 

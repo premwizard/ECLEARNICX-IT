@@ -86,7 +86,7 @@ const FeatureCard = ({ feature, index }) => {
 export default function WhyChooseUs() {
   return (
     <section 
-      className="relative py-16 md:py-20 bg-[#050505] overflow-hidden flex flex-col justify-center"
+      className="relative py-16 md:py-20 bg-[#0A0820] overflow-hidden flex flex-col justify-center"
       id="why-choose-us"
     >
       {/* Background Noise */}
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
             <div className="w-8 h-[1px] bg-primary/50" />
           </motion.div>
           <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-bold text-white uppercase tracking-tighter py-1 leading-[1.1]">
-            Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ECLearnix?</span>
+            Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient">ECLearnix?</span>
           </h2>
 
           <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto mt-4 font-medium">
