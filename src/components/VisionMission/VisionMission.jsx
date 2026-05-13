@@ -27,8 +27,13 @@ const CharReveal = ({ text, delay = 0, color = "white", hoverColor = "primary" }
         initial={{ scaleX: 0 }}
         whileHover={{ scaleX: 1 }}
         transition={{ duration: 0.5, ease: "circOut" }}
-        className={`absolute -bottom-2 left-0 h-1 bg-${hoverColor} w-full origin-left opacity-0 group-hover:opacity-100 hidden md:block shadow-[0_0_20px_rgba(var(--${hoverColor}-rgb),0.8)]`}
+        className={`absolute -bottom-2 left-0 h-1 bg-${hoverColor} w-full origin-left opacity-0 group-hover:opacity-100 hidden md:block ${
+          hoverColor === 'primary' 
+            ? 'shadow-[0_0_20px_rgba(var(--primary-rgb),0.8)]' 
+            : 'shadow-[0_0_20px_rgba(var(--secondary-rgb),0.8)]'
+        }`}
       />
+
     </motion.h2>
   );
 };
