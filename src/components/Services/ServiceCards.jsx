@@ -50,7 +50,7 @@ export default function ServiceCards() {
 
 
         {/* INTERACTIVE PANELS */}
-        <div className="flex flex-col lg:flex-row min-h-[800px] lg:h-[600px] gap-4">
+        <div className="flex flex-col lg:flex-row min-h-[600px] lg:h-[480px] gap-4">
           {servicesData.map((service, i) => (
             <Link
               key={service.id}
@@ -74,7 +74,7 @@ export default function ServiceCards() {
               </div>
 
               {/* Panel Content */}
-              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
+              <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-10">
                 {/* Number Indicator */}
                 <div className="absolute top-10 left-10 text-white/20 font-black text-4xl tracking-tighter group-hover:text-primary transition-colors">
                   0{i + 1}
@@ -85,15 +85,15 @@ export default function ServiceCards() {
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter mb-4 leading-none group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-3 leading-none group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
 
-                  <div className={`overflow-hidden transition-all duration-500 ${hoveredIndex === i ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0 lg:hidden'}`}>
-                    <p className="text-white/80 font-medium mb-8 leading-relaxed">
+                  <div className={`overflow-hidden transition-all duration-500 ${hoveredIndex === i ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0 lg:hidden'}`}>
+                    <p className="text-white/80 font-medium mb-5 leading-relaxed text-sm md:text-base">
                       {service.shortDesc}
                     </p>
-                    <div className="inline-flex items-center gap-4 text-primary font-black tracking-widest text-[10px] uppercase group-hover:gap-6 transition-all">
+                    <div className="inline-flex items-center gap-4 text-primary font-black tracking-widest text-[9px] uppercase group-hover:gap-6 transition-all">
                       Learn More <FiArrowRight />
                     </div>
                   </div>

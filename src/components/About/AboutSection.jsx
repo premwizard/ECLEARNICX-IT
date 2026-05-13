@@ -96,7 +96,7 @@ const AboutSection = () => {
 
             {/* Right Collage - Slightly smaller as requested */}
             <div ref={rightContentRef} className="relative order-1 lg:order-2 flex items-center justify-end py-4 lg:py-0">
-              <div className="grid grid-cols-2 gap-4 md:gap-6 w-full max-w-2xl lg:max-w-3xl">
+              <div className="grid grid-cols-2 gap-4 md:gap-6 w-full max-w-2xl lg:max-w-3xl p-4">
 
                 {/* Image 1 - Top Left */}
                 <div className="about-collage-img aspect-square rounded-[1.2rem] md:rounded-[1.8rem] overflow-hidden shadow-xl border-2 md:border-[3px] border-white transform hover:scale-[1.02] transition-transform duration-500">
