@@ -96,7 +96,7 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 left-0 w-full z-[99999] transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[1000000] transition-all duration-500 ${
   scrolled
     ? 'bg-[#0A0820]/70 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg'
     : 'bg-transparent py-5'
@@ -159,8 +159,8 @@ export default function Navbar() {
               <FaEnvelope className="text-sm" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[8px] uppercase tracking-[0.4em] text-white/30 font-black mb-0.5">mail us at:</span>
-              <span className="text-white text-sm font-black tracking-tight group-hover:text-primary transition-all duration-300 font-satoshi">info@eclearnix.com</span>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-black mb-1">mail us at:</span>
+              <span className="text-white text-[15px] font-black tracking-tight group-hover:text-primary transition-all duration-300 font-satoshi">info@eclearnix.com</span>
             </div>
           </a>
         </div>
@@ -222,8 +222,8 @@ export default function Navbar() {
               </div>
 
               <div className="mt-auto relative z-10 border-t border-white/10 pt-10">
-                 <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-black mb-4">Get in touch</p>
-                 <a href="mailto:info@eclearnix.com" className="text-white text-xl font-black hover:text-primary transition-colors">info@eclearnix.com</a>
+                 <p className="text-white/40 text-[12px] uppercase tracking-[0.4em] font-black mb-4">mail us at:</p>
+                 <a href="mailto:info@eclearnix.com" className="text-white text-2xl font-black hover:text-primary transition-colors">info@eclearnix.com</a>
               </div>
             </div>
 

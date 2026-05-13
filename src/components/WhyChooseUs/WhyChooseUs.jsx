@@ -86,7 +86,7 @@ const FeatureCard = ({ feature, index }) => {
 export default function WhyChooseUs() {
   return (
     <section 
-      className="relative py-16 md:py-20 bg-[#0A0820] overflow-hidden flex flex-col justify-center"
+      className="relative py-24 md:py-32 bg-[#0A0820] overflow-hidden flex flex-col justify-center"
       id="why-choose-us"
     >
       {/* Background Noise */}

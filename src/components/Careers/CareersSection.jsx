@@ -26,7 +26,7 @@ export default function CareersSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="section-dark py-5 md:py-7" id="careers">
+    <section ref={containerRef} className="section-dark py-24 md:py-32" id="careers">
 
       {/* Background Lighting */}
       <div className="glow-mesh top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/10" />

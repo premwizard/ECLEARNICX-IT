@@ -152,7 +152,7 @@ export default function CareersPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="public/images/image copy.png"
+            src="/images/image_copy.png"
             alt="Careers Hero"
             className="w-full h-full object-cover opacity-90"
           />

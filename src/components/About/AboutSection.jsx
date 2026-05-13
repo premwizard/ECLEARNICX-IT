@@ -57,7 +57,7 @@ const AboutSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative py-8 md:py-12 bg-white overflow-hidden flex items-center justify-center lg:h-screen min-h-[600px]"
+      className="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-white overflow-hidden flex items-center justify-center min-h-screen"
       id="about"
     >
       <div className="w-full max-w-[100%] px-6 md:px-12 lg:px-24 relative z-10">

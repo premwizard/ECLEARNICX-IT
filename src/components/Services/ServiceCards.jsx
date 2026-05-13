@@ -50,7 +50,7 @@ export default function ServiceCards() {
 
 
         {/* INTERACTIVE PANELS */}
-        <div className="flex flex-col lg:flex-row min-h-[600px] lg:h-[480px] gap-4">
+        <div className="flex flex-col lg:flex-row min-h-[500px] lg:h-[420px] gap-4">
           {servicesData.map((service, i) => (
             <Link
               key={service.id}

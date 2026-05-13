@@ -69,7 +69,7 @@ export default function HeroSpline() {
     offset: ["start start", "end start"]
   })
 
-  const yPos = useTransform(scrollYProgress, [0, 1], [0, 350])
+  const yPos = useTransform(scrollYProgress, [0, 1], [0, 150])
   const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
   const textScale = useTransform(scrollYProgress, [0, 0.4], [1, 0.9])
 
@@ -185,7 +185,7 @@ export default function HeroSpline() {
 
         <HeroHeading headingRef={headingRef} />
 
-        <p className="hero-reveal max-w-5xl mx-auto text-white/90 leading-relaxed mb-10 md:mb-14 text-center text-[clamp(1rem,3vw,1.25rem)] font-black px-4">
+        <p className="hero-reveal max-w-4xl mx-auto text-white/90 leading-relaxed mb-8 md:mb-10 text-center text-[clamp(0.9rem,2.5vw,1.1rem)] font-black px-4">
           At ECLearnix Technology Solutions, we empower businesses, startups, educational institutions, and enterprises 
           with cutting-edge technology services designed for innovation, scalability, and growth. From AI-powered automation 
           to cloud infrastructure, creative digital experiences, and business-focused software solutions, we help organizations 
