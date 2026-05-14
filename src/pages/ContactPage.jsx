@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaCheck } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaInstagram, FaFacebookF, FaCheck, FaChevronDown } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,30 +67,23 @@ const ContactPage = () => {
 
   return (
     <div ref={containerRef} className="bg-[#050505] min-h-screen pt-32 pb-20 overflow-hidden relative">
-      {/* Background Cinematic Effects - Obsidian & Purple Atmosphere */}
+      {/* Background Cinematic Effects */}
       <div className="absolute top-0 right-0 w-[1200px] h-[1200px] bg-[#3D00B8]/10 rounded-full blur-[180px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[1000px] h-[1000px] bg-[#6B35E8]/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.06] pointer-events-none" />
       
-      {/* Interactive Cursor Glow (CSS only approximation for performance) */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] bg-[#3D00B8]/[0.03] rounded-full blur-[120px] mix-blend-screen animate-pulse" style={{ top: '20%', left: '10%' }} />
-        <div className="absolute w-[400px] h-[400px] bg-white/[0.01] rounded-full blur-[100px]" style={{ bottom: '10%', right: '15%' }} />
-      </div>
-
       <div className="container mx-auto px-6 lg:px-20 relative z-10 h-full flex items-center">
         <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
           
-          {/* LEFT COLUMN: Info & Branding */}
+          {/* LEFT COLUMN: Info */}
           <div className="lg:col-span-5 space-y-10">
             <div>
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
                 className="flex items-center gap-4 mb-6"
               >
-                <div className="w-12 h-[1px] bg-primary"></div>
+                <div className="w-12 h-[1px] bg-primary" />
                 <span className="text-primary uppercase tracking-[0.5em] text-[10px] font-black">Contact Us</span>
               </motion.div>
               
@@ -104,7 +98,6 @@ const ContactPage = () => {
               </p>
             </div>
 
-            {/* Quick Contacts */}
             <div className="space-y-6 pt-4">
               {[
                 { icon: <FaEnvelope />, label: "Email", val: "info@eclearnix.com" },
@@ -122,12 +115,22 @@ const ContactPage = () => {
               ))}
             </div>
 
-            {/* Socials */}
             <div className="flex gap-3 pt-2">
-              {[<FaLinkedin />, <FaTwitter />, <FaInstagram />, <FaGithub />].map((icon, i) => (
-                <button key={i} className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 border border-white/10 hover:bg-primary/20 hover:text-primary transition-all duration-500">
-                  {icon}
-                </button>
+              {[
+                { icon: <FaLinkedin />, href: "https://linkedin.com" },
+                { icon: <FaXTwitter />, href: "https://x.com/eclearnix_888" },
+                { icon: <FaInstagram />, href: "https://instagram.com" },
+                { icon: <FaFacebookF />, href: "https://www.facebook.com/profile.php?id=61578948513643" }
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 border border-white/10 hover:bg-primary/20 hover:text-primary transition-all duration-500"
+                >
+                  {social.icon}
+                </a>
               ))}
             </div>
           </div>
@@ -155,7 +158,6 @@ const ContactPage = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="p-6 md:p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl relative overflow-hidden group/form"
                 >
-                  {/* Internal Ambient Glows */}
                   <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-[80px] group-hover/form:bg-primary/20 transition-colors duration-700" />
                   
                   <motion.form 
@@ -163,10 +165,7 @@ const ContactPage = () => {
                     className="relative z-10 space-y-5"
                     variants={{
                       hidden: { opacity: 0 },
-                      show: {
-                        opacity: 1,
-                        transition: { staggerChildren: 0.1 }
-                      }
+                      show: { opacity: 1, transition: { staggerChildren: 0.1 } }
                     }}
                     initial="hidden"
                     animate="show"
@@ -183,23 +182,30 @@ const ContactPage = () => {
 
                     <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="grid md:grid-cols-2 gap-5">
                       <div className="space-y-3 group/select">
-                        <label htmlFor="inquiry_type" className="text-[10px] uppercase tracking-[0.4em] text-primary font-black ml-4 opacity-70 transition-opacity group-focus-within/select:opacity-100">Inquiry Type</label>
-                        <select 
-                          id="inquiry_type"
-                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white text-sm focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer hover:bg-white/[0.08]"
-                          defaultValue="General Inquiry"
-                        >
-                          <option className="bg-[#050505]">General Inquiry</option>
-                          <option className="bg-[#050505]">Project Discussion</option>
-                          <option className="bg-[#050505]">Technical Support</option>
-                          <option className="bg-[#050505]">Career Opportunity</option>
-                        </select>
+                        <label htmlFor="inquiry_type" className="text-[10px] uppercase tracking-[0.4em] text-white font-black ml-4 opacity-70 transition-opacity group-focus-within/select:opacity-100">Inquiry Type</label>
+                        <div className="relative">
+                          <select 
+                            id="inquiry_type"
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-6 pr-12 py-4 text-white text-sm focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer hover:bg-white/[0.08]"
+                            defaultValue="General Inquiry"
+                          >
+                            <option className="bg-[#050505]">General Inquiry</option>
+                            <option className="bg-[#050505]">Project Discussion</option>
+                            <option className="bg-[#050505]">Technical Support</option>
+                            <option className="bg-[#050505]">Collaboration</option> 
+                            <option className="bg-[#050505]">Freelancing</option>
+                            <option className="bg-[#050505]">Career Opportunity</option>
+                          </select>
+                          <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-primary transition-colors">
+                            <FaChevronDown className="text-[10px]" />
+                          </div>
+                        </div>
                       </div>
                       <FormInput id="subject" label="Subject" placeholder="Brief overview" required />
                     </motion.div>
 
                     <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="space-y-3 group/textarea">
-                      <label htmlFor="message" className="text-[10px] uppercase tracking-[0.4em] text-primary font-black ml-4 opacity-70 transition-opacity group-focus-within/textarea:opacity-100">Message</label>
+                      <label htmlFor="message" className="text-[10px] uppercase tracking-[0.4em] text-white font-black ml-4 opacity-70 transition-opacity group-focus-within/textarea:opacity-100">Message</label>
                       <textarea 
                         id="message"
                         rows="3"
@@ -239,7 +245,7 @@ const ContactPage = () => {
 const FormInput = ({ label, placeholder, type = "text", required = false, optional = false, id, name }) => (
   <div className="space-y-4 relative group/input">
     <div className="flex justify-between items-end px-4">
-      <label htmlFor={id} className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black opacity-70 transition-opacity group-focus-within/input:opacity-100">{label}</label>
+      <label htmlFor={id} className="text-[10px] uppercase tracking-[0.4em] text-white font-black opacity-70 transition-opacity group-focus-within/input:opacity-100">{label}</label>
       {optional && <span className="text-[8px] uppercase tracking-widest text-white/20 font-bold">Optional</span>}
     </div>
     <div className="relative">

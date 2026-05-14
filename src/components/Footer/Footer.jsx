@@ -181,7 +181,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] font-medium tracking-widest text-gray-500 uppercase text-center md:text-left opacity-60">
+          <p className="!text-[10px] font-medium tracking-widest text-gray-500 uppercase text-center md:text-left opacity-60">
             © {currentYear} ECLEARNIX TECHNOLOGY SOLUTIONS. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6">

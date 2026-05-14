@@ -96,10 +96,10 @@ const TeamCard = ({ member }) => {
 
           {/* Info */}
           <div className="px-4 pb-6 text-center flex-grow flex flex-col justify-center">
-            <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter mb-0.5 transition-colors group-hover:text-primary">
+            <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter mb-3 transition-colors group-hover:text-primary">
               {member.name}
             </h3>
-            <p className="!text-[12px] font-medium uppercase tracking-[0.5em] text-[#1560BD] transition-colors group-hover:text-white leading-none">
+            <p className="!text-[12px] font-medium uppercase tracking-normal text-[#1560BD] transition-colors group-hover:text-white leading-none">
               {member.role}
             </p>
           </div>

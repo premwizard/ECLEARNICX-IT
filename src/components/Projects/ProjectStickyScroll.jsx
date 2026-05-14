@@ -104,7 +104,7 @@ const ProjectSlide = memo(({ project, index }) => {
                 className="group flex items-center gap-10 text-white uppercase font-black text-[16px] tracking-[0.6em] transition-all hover:gap-14"
               >
                 EXPLORE PROJECT
-                <div className="w-24 h-24 rounded-full border-[3px] border-white flex items-center justify-center text-5xl transition-all group-hover:bg-white group-hover:text-black group-hover:rotate-45">
+                <div className="w-16 h-16 rounded-full border-[3px] border-white flex items-center justify-center text-2xl transition-all group-hover:bg-white group-hover:text-black">
                   →
                 </div>
               </a>

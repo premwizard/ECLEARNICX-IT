@@ -94,13 +94,13 @@ ECLearnix Technology Solutions is the IT and technology division of ECLearnix, e
 <br />Whether it’s a startup launching a new idea or an enterprise undergoing digital transformation, we provide end-to-end IT services with innovation, quality, and reliability.
 </p>
 
-              {/* Services & Expertise Grid - Styled as Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+              {/* Services & Expertise Grid - Styled as Equal Bento Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
                 {[
-                  { title: "UI/UX & Quality Engineering", icon: <FiCheckCircle size={18} /> },
-                  { title: "Software & Mobile App Development", icon: <FiSmartphone size={18} /> },
-                  { title: "Digital Platform Development", icon: <FiLayers size={18} /> },
-                  { title: "Strategic Consulting", icon: <FiTrendingUp size={18} /> }
+                  { title: "UI/UX & Quality Engineering", icon: <FiCheckCircle size={22} /> },
+                  { title: "Software & Mobile Development", icon: <FiSmartphone size={22} /> },
+                  { title: "Digital Platforms", icon: <FiLayers size={22} /> },
+                  { title: "Strategic Consulting", icon: <FiTrendingUp size={22} /> }
                 ].map((item, i) => (
                   <motion.div 
                     key={i} 
@@ -108,17 +108,21 @@ ECLearnix Technology Solutions is the IT and technology division of ECLearnix, e
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" }}
-                    whileHover={{ y: -8, backgroundColor: '#ffffff', boxShadow: '0 20px 40px rgba(61, 0, 184, 0.08)' }}
-                    className="group p-6 rounded-[2rem] bg-[#F4F7FF] border border-black/[0.04] hover:border-primary/40 transition-all duration-500 flex items-center gap-5 shadow-sm relative overflow-hidden"
+                    whileHover={{ y: -5, backgroundColor: '#ffffff', boxShadow: '0 30px 60px rgba(61, 0, 184, 0.1)' }}
+                    className="group p-8 rounded-[2.5rem] bg-[#F4F7FF] border border-black/[0.04] hover:border-primary/40 transition-all duration-500 flex flex-col justify-between gap-8 shadow-sm relative overflow-hidden min-h-[160px]"
                   >
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
                     
-                    <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 flex-shrink-0 relative z-10 border border-black/[0.02]">
+                    <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 flex-shrink-0 relative z-10 border border-black/[0.02]">
                       {item.icon}
                     </div>
-                    <h4 className="text-[13px] font-black text-[#0A0820] uppercase tracking-[0.18em] leading-tight group-hover:text-primary transition-colors relative z-10 pr-4">
-                      {item.title}
-                    </h4>
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-[14px] font-black text-[#0A0820] uppercase tracking-[0.2em] leading-tight group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h4>
+                      <div className="w-8 h-[2px] bg-primary/20 mt-4 group-hover:w-16 transition-all duration-500" />
+                    </div>
                   </motion.div>
                 ))}
               </div>

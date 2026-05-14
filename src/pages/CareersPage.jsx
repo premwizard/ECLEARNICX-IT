@@ -107,14 +107,14 @@ export default function CareersPage() {
 
 
   const positions = [
-    { title: "Frontend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Build responsive and interactive web applications using modern frontend frameworks and UI technologies." },
-    { title: "Backend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Develop scalable APIs, server-side applications, databases, and secure backend systems for digital platforms." },
-    { title: "Full Stack Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", desc: "Work across frontend and backend technologies to build complete, high-performance web applications." },
-    { title: "UI/UX Designer", dept: "Design", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Design intuitive user experiences, modern interfaces, prototypes, and creative digital solutions for web and mobile platforms." },
-    { title: "Mobile App Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Create high-performance Android, iOS, and cross-platform mobile applications with seamless user experiences." },
-    { title: "AI & Automation Engineer", dept: "AI & Innovation", type: "Full-time", loc: "Remote / Hybrid", desc: "Develop AI-powered systems, automation workflows, intelligent chatbots, and smart digital solutions for businesses and institutions." },
-    { title: "Video Editor", dept: "Creative Media", type: "Full-time", loc: "Coimbatore / Hybrid", desc: "Create engaging video content, motion graphics, promotional reels, and digital media assets for branding and marketing campaigns." },
-    { title: "Digital Marketing Executive", dept: "Marketing", type: "Full-time", loc: "Coimbatore / Remote", desc: "Manage SEO, social media marketing, performance campaigns, content strategy, and digital growth initiatives to enhance brand visibility and engagement." },
+    { title: "Frontend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", exp: "2+ Years", desc: "Build responsive and interactive web applications using modern frontend frameworks and UI technologies." },
+    { title: "Backend Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", exp: "2+ Years", desc: "Develop scalable APIs, server-side applications, databases, and secure backend systems for digital platforms." },
+    { title: "Full Stack Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Remote", exp: "2+ Years", desc: "Work across frontend and backend technologies to build complete, high-performance web applications." },
+    { title: "UI/UX Designer", dept: "Design", type: "Full-time", loc: "Coimbatore / Hybrid", exp: "1.5+ Years", desc: "Design intuitive user experiences, modern interfaces, prototypes, and creative digital solutions for web and mobile platforms." },
+    { title: "Mobile App Developer", dept: "Engineering", type: "Full-time", loc: "Coimbatore / Hybrid", exp: "2+ Years", desc: "Create high-performance Android, iOS, and cross-platform mobile applications with seamless user experiences." },
+    { title: "AI & Automation Engineer", dept: "AI & Innovation", type: "Full-time", loc: "Remote / Hybrid", exp: "3+ Years", desc: "Develop AI-powered systems, automation workflows, intelligent chatbots, and smart digital solutions for businesses and institutions." },
+    { title: "Video Editor", dept: "Creative Media", type: "Full-time", loc: "Coimbatore / Hybrid", exp: "1.5+ Years", desc: "Create engaging video content, motion graphics, promotional reels, and digital media assets for branding and marketing campaigns." },
+    { title: "Digital Marketing Executive", dept: "Marketing", type: "Full-time", loc: "Coimbatore / Remote", exp: "1.5+ Years", desc: "Manage SEO, social media marketing, performance campaigns, content strategy, and digital growth initiatives to enhance brand visibility and engagement." },
   ];
 
   const hiringSteps = [
@@ -241,6 +241,9 @@ export default function CareersPage() {
                     <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
                       <FiGlobe className="text-primary/60" /> {job.loc}
                     </div>
+                    <div className="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest">
+                      <FiAward className="text-primary/60" /> {job.exp}
+                    </div>
                   </div>
                   
                   <p className="text-white/50 text-sm leading-relaxed mb-10 group-hover:text-white/70 transition-colors">
@@ -248,7 +251,10 @@ export default function CareersPage() {
                   </p>
                 </div>
 
-                <button className="w-full py-4 rounded-xl bg-white/5 border border-white/10 text-white font-black text-[10px] uppercase tracking-[0.2em] group-hover:bg-white group-hover:text-black transition-all duration-500 flex items-center justify-center gap-3">
+                <button 
+                  onClick={() => document.getElementById('apply').scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full py-4 rounded-xl bg-white/5 border border-white/10 text-white font-black text-[10px] uppercase tracking-[0.2em] group-hover:bg-white group-hover:text-black transition-all duration-500 flex items-center justify-center gap-3"
+                >
                   View Details <FiArrowUpRight />
                 </button>
               </motion.div>
@@ -319,7 +325,7 @@ export default function CareersPage() {
       {/* 7. APPLICATION FORM SECTION (DARK) */}
       <section id="apply" className="career-section py-32 px-6 section-dark">
         <div className="container mx-auto">
-          <div className="max-w-5xl mx-auto rounded-[3rem] bg-white/[0.05] border border-white/10 p-8 md:p-20 backdrop-blur-3xl relative overflow-hidden">
+          <div className="max-w-8xl mx-auto rounded-[3rem] bg-white/[0.05] border border-white/10 p-8 md:p-20 backdrop-blur-3xl relative overflow-hidden">
 
             <div className="relative z-10 grid lg:grid-cols-2 gap-20">
               <div className="animate-up">
@@ -355,15 +361,15 @@ export default function CareersPage() {
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Full Name</label>
                     <div className="relative">
-                      <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
-                      <FiUser className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" />
+                      <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
+                      <FiUser className="absolute right-8 top-1/2 -translate-y-1/2 text-white/20" />
                     </div>
                   </div>
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Email Address</label>
                     <div className="relative">
-                      <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
-                      <FiMail className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" />
+                      <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
+                      <FiMail className="absolute right-8 top-1/2 -translate-y-1/2 text-white/20" />
                     </div>
                   </div>
                 </div>
@@ -372,25 +378,25 @@ export default function CareersPage() {
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Position Applying For</label>
                     <div className="relative">
-                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
+                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
                         <option className="bg-darkBg">Select a position</option>
                         {positions.map(p => <option key={p.title} className="bg-darkBg">{p.title}</option>)}
                         <option className="bg-darkBg">Other / General Application</option>
                       </select>
-                      <FiBriefcase className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
+                      <FiBriefcase className="absolute right-8 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
                     </div>
                   </div>
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Select Role Type</label>
                     <div className="relative">
-                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
+                      <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white appearance-none focus:outline-none focus:border-primary/50 transition-all duration-300">
                         <option className="bg-darkBg">Select Role Type</option>
                         <option className="bg-darkBg">Intern</option>
                         <option className="bg-darkBg">Trainee</option>
                         <option className="bg-darkBg">Employee</option>
                         <option className="bg-darkBg">Freelancer</option>
                       </select>
-                      <FiLayers className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
+                      <FiLayers className="absolute right-8 top-1/2 -translate-y-1/2 text-white/20 pointer-events-none" />
                     </div>
                   </div>
                 </div>
@@ -399,14 +405,14 @@ export default function CareersPage() {
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">LinkedIn Profile</label>
                     <div className="relative">
-                      <input type="text" placeholder="linkedin.com/in/username" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
-                      <FiLinkedin className="absolute right-6 top-1/2 -translate-y-1/2 text-white/20" />
+                      <input type="text" placeholder="linkedin.com/in/username" className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-all duration-300" />
+                      <FiLinkedin className="absolute right-8 top-1/2 -translate-y-1/2 text-white/20" />
                     </div>
                   </div>
                   <div className="group">
                     <label className="text-[10px] uppercase tracking-[0.3em] font-black text-white/40 mb-3 block ml-2">Resume Upload</label>
                     <div className="relative">
-                      <div className="w-full bg-white/5 border border-white/10 border-dashed rounded-2xl px-6 py-4 text-white/40 flex items-center justify-between cursor-pointer hover:bg-white/10 transition-all">
+                      <div className="w-full bg-white/5 border border-white/10 border-dashed rounded-2xl px-8 py-5 text-white/40 flex items-center justify-between cursor-pointer hover:bg-white/10 transition-all">
                         <span>Choose PDF file...</span>
                         <FiFileText />
                       </div>

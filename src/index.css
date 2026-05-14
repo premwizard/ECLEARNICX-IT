@@ -48,9 +48,7 @@ body,
   overflow-x: hidden;
 }
 
-/* ===== GLOBAL FONT SETTINGS ===== */
-
-/* Apply Sora to everything by default */
+/* Apply Inter to everything by default */
 *,
 *::before,
 *::after {
@@ -62,7 +60,7 @@ html {
 }
 
 body {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   line-height: 1.9;
   letter-spacing: -0.01em;
@@ -72,73 +70,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Apply Sora to ALL headings */
+/* Apply Sora to ALL headings, Nav, and Buttons */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #0A0820;
+h6,
+.font-heading,
+.title,
+.heading,
+[class*="title"],
+[class*="heading"],
+nav a,
+.nav-link,
+button,
+.btn,
+a.button {
+  font-family: 'Sora', sans-serif !important;
 }
 
 /* Specific heading weights */
 h1 {
   font-weight: 700;
-  font-size: clamp(36px, 5vw, 64px);
 }
 
 h2 {
   font-weight: 600;
-  font-size: clamp(26px, 3.5vw, 42px);
 }
 
 h3 {
   font-weight: 600;
-  font-size: clamp(18px, 2vw, 24px);
 }
 
 h4 {
   font-weight: 500;
-  font-size: clamp(15px, 1.5vw, 18px);
 }
 
-/* Navigation links */
+/* Navigation & Button sizes */
 nav a,
 .nav-link {
-  font-family: 'Sora', sans-serif;
   font-weight: 800;
   font-size: 13px;
 }
 
-/* Buttons */
 button,
 .btn,
 a.button {
-  font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
 }
 
-/* All paragraph text */
-p {
-  font-family: 'Sora', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-}
-
-/* Span and small text */
+/* All paragraph text & inputs use Inter */
+p,
 span,
 li,
 label,
 input,
 textarea {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
 /* Override any inline font styles */
@@ -212,6 +204,7 @@ h6 {
 
   body {
     @apply font-sans antialiased bg-[#F5F7FF] text-[#8899BB];
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
 
@@ -222,7 +215,7 @@ h6 {
   h5,
   h6 {
     @apply font-bold text-[#0A0820];
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', sans-serif !important;
   }
 }
 
