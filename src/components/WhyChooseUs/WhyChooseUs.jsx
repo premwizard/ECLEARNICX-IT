@@ -61,9 +61,9 @@ const FeatureCard = ({ feature, index }) => {
       className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300"
     >
       <div className="flex flex-col gap-4">
-        {/* Icon Header */}
-        <div className={`p-3 rounded-xl bg-white/5 w-fit border border-white/5 group-hover:border-primary/20 group-hover:bg-primary/10 transition-all duration-300 ${feature.color}`}>
-          <Icon className="w-6 h-6" />
+        {/* Icon Header - Box removed as requested */}
+        <div className={`${feature.color} group-hover:scale-110 transition-transform duration-300`}>
+          <Icon className="w-8 h-8" />
         </div>
         
         {/* Text Content */}

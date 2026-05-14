@@ -8,6 +8,7 @@ import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage';
 import CareersPage from './pages/CareersPage';
+import ContactPage from './pages/ContactPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,6 +81,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/services/:id" element={<ServiceDetailPage />} />
             {/* Add other routes if needed, or fallback to Home */}
             <Route path="*" element={<HomePage />} />

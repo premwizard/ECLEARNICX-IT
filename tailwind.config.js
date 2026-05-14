@@ -19,9 +19,9 @@ export default {
       },
       // ADD THIS FONT FAMILY SECTION
       fontFamily: {
-        heading: ['"Manrope"', 'sans-serif'],
-        body: ['"Satoshi"', 'sans-serif'],
-        sans: ['"Satoshi"', 'sans-serif'],
+        heading: ['"Sora"', 'sans-serif'],
+        body: ['"Sora"', 'sans-serif'],
+        sans: ['"Sora"', 'sans-serif'],
       },
       fontSize: {
         // Custom size scale

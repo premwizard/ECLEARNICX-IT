@@ -85,12 +85,12 @@ export default function ServiceCards() {
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-3 leading-none group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-black !text-white uppercase tracking-tighter mb-3 leading-none group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
 
                   <div className={`overflow-hidden transition-all duration-500 ${hoveredIndex === i ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0 lg:hidden'}`}>
-                    <p className="text-white/80 font-medium mb-5 leading-relaxed text-sm md:text-base">
+                    <p className="!text-white/80 font-medium mb-5 leading-relaxed text-sm md:text-base">
                       {service.shortDesc}
                     </p>
                     <div className="inline-flex items-center gap-4 text-primary font-black tracking-widest text-[9px] uppercase group-hover:gap-6 transition-all">

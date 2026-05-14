@@ -84,7 +84,7 @@ const ProjectSlide = memo(({ project, index }) => {
         </div>
 
         {/* Title with Split Animation - 'Godzilla' Scale with Responsive Clamping */}
-        <h3 className="project-title text-white text-[clamp(3rem,10vw,6rem)] md:text-[clamp(6rem,15vw,16rem)] font-extrabold leading-[0.8] mb-8 md:mb-16 tracking-[-0.06em] uppercase py-4 overflow-visible drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
+        <h3 className="project-title !text-white text-[clamp(3rem,10vw,6rem)] md:text-[clamp(6rem,15vw,16rem)] font-extrabold leading-[0.8] mb-8 md:mb-16 tracking-[-0.06em] uppercase py-4 overflow-visible drop-shadow-[0_10px_40px_rgba(0,0,0,0.9)]">
           {project.title}
         </h3>
 
@@ -103,7 +103,7 @@ const ProjectSlide = memo(({ project, index }) => {
                 href={project.link}
                 className="group flex items-center gap-10 text-white uppercase font-black text-[16px] tracking-[0.6em] transition-all hover:gap-14"
               >
-                EXPLORE PROJECTS
+                EXPLORE PROJECT
                 <div className="w-24 h-24 rounded-full border-[3px] border-white flex items-center justify-center text-5xl transition-all group-hover:bg-white group-hover:text-black group-hover:rotate-45">
                   →
                 </div>

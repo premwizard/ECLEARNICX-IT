@@ -428,17 +428,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* 8. CTA SECTION (LIGHT) */}
-      <section className="career-section py-32 px-6 relative overflow-hidden section-light">
-        <div className="container mx-auto text-center relative z-10">
-          <div className="animate-up max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-tight mb-8 text-heading py-6 overflow-visible">Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Future</span> With Us</h2>
-            <p className="text-bodyText text-xl md:text-2xl font-medium mb-12 max-w-2xl mx-auto">
-              Join ECLearnix Technology Solutions and become part of a team shaping innovative digital experiences.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
     </div>
   );

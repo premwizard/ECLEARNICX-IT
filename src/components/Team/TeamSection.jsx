@@ -72,40 +72,42 @@ const teamMembers = [
 const TeamCard = ({ member }) => {
   return (
     <div className="flex-shrink-0 w-[260px] md:w-[300px] px-3">
-      <div className="relative p-1.5 rounded-[2rem] bg-white/[0.03] backdrop-blur-2xl border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-primary/50 hover:bg-white/[0.08] h-full flex flex-col group">
-        {/* Uniform Portrait */}
-        <div className="relative aspect-[4/5] rounded-[1.8rem] overflow-hidden mb-4 flex-shrink-0">
-          <img 
-            src={member.image} 
-            alt={member.name} 
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
-          
-          {/* LinkedIn Button */}
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-primary hover:border-primary hover:scale-110 shadow-lg"
-          >
-            <FaLinkedinIn className="text-xs" />
-          </a>
-        </div>
+      <a 
+        href={member.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full group"
+      >
+        <div className="relative p-1.5 rounded-[2rem] bg-white/[0.03] backdrop-blur-2xl border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-primary/50 hover:bg-white/[0.08] h-full flex flex-col">
+          {/* Uniform Portrait */}
+          <div className="relative aspect-[4/5] rounded-[1.8rem] overflow-hidden mb-4 flex-shrink-0">
+            <img 
+              src={member.image} 
+              alt={member.name} 
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
+            
+            {/* LinkedIn Button Indicator */}
+            <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:scale-110 shadow-lg">
+              <FaLinkedinIn className="text-xs" />
+            </div>
+          </div>
 
-        {/* Info */}
-        <div className="px-4 pb-6 text-center flex-grow flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter mb-0.5 transition-colors group-hover:text-primary">
-            {member.name}
-          </h3>
-          <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white/30 transition-colors group-hover:text-white">
-            {member.role}
-          </p>
-        </div>
+          {/* Info */}
+          <div className="px-4 pb-6 text-center flex-grow flex flex-col justify-center">
+            <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter mb-0.5 transition-colors group-hover:text-primary">
+              {member.name}
+            </h3>
+            <p className="text-[7px] font-bold uppercase tracking-[0.4em] text-[#1560BD] transition-colors group-hover:text-white">
+              {member.role}
+            </p>
+          </div>
 
-        {/* Hover Glow Orb */}
-        <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      </div>
+          {/* Hover Glow Orb */}
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        </div>
+      </a>
     </div>
   );
 };
@@ -139,9 +141,7 @@ export default function TeamSection() {
             </h2>
 
           </div>
-          <p className="text-white/30 text-sm md:text-lg font-medium max-w-sm leading-relaxed mb-2">
-            A seamless collective of experts scaling excellence through constant innovation.
-          </p>
+         
         </div>
 
         {/* Infinite Looping Carousel */}

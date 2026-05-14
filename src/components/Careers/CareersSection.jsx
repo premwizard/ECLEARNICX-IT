@@ -35,7 +35,7 @@ export default function CareersSection() {
         <div className="career-content grid lg:grid-cols-2 gap-20 items-center">
           <div>
             <p style={{
-              fontFamily: '"Satoshi", sans-serif',
+              fontFamily: '"Sora", sans-serif',
               fontSize: '12px',
               fontWeight: 600,
               letterSpacing: '4px',
@@ -45,7 +45,7 @@ export default function CareersSection() {
             }}>Join Our Team</p>
             <h2
               style={{
-                fontFamily: '"Manrope", sans-serif',
+                fontFamily: '"Sora", sans-serif',
                 fontSize: 'clamp(32px, 5vw, 64px)',
                 fontWeight: 700,
                 color: '#ffffff',
@@ -61,7 +61,7 @@ export default function CareersSection() {
             </h2>
             <p
               style={{
-                fontFamily: '"Satoshi", sans-serif',
+                fontFamily: '"Sora", sans-serif',
                 fontSize: '18px',
                 fontWeight: 400,
                 color: 'rgba(255, 255, 255, 0.5)',
@@ -74,7 +74,7 @@ export default function CareersSection() {
             </p>
             <Link
               to="/careers"
-              style={{ fontFamily: '"Satoshi", sans-serif', fontWeight: 700, fontSize: '13px' }}
+              style={{ fontFamily: '"Sora", sans-serif', fontWeight: 700, fontSize: '13px' }}
               className="group relative inline-block px-12 py-6 bg-white text-black text-xs uppercase tracking-[0.3em] rounded-2xl overflow-hidden transition-all duration-500 hover:text-white"
             >
               <span className="relative z-10 flex items-center gap-3">
@@ -92,8 +92,8 @@ export default function CareersSection() {
               { t: "Innovation", d: "Be part of a forward-thinking team where ideas, creativity, and modern technology come together to shape the future." }
             ].map((item, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/5 backdrop-blur-xl hover:bg-white/[0.06] transition-all duration-500">
-                <h4 style={{ fontFamily: '"Manrope", sans-serif', fontSize: '18px', fontWeight: 600 }} className="uppercase tracking-tighter mb-4 text-primary">{item.t}</h4>
-                <p style={{ fontFamily: '"Satoshi", sans-serif', fontSize: '13px', fontWeight: 400 }} className="text-white/40 leading-relaxed">{item.d}</p>
+                <h4 style={{ fontFamily: '"Sora", sans-serif', fontSize: '18px', fontWeight: 600 }} className="uppercase tracking-tighter mb-4 text-primary">{item.t}</h4>
+                <p style={{ fontFamily: '"Sora", sans-serif', fontSize: '13px', fontWeight: 400 }} className="text-white/40 leading-relaxed">{item.d}</p>
               </div>
             ))}
           </div>

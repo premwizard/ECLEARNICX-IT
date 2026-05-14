@@ -88,9 +88,9 @@ const TestimonialCard = memo(({ testimonial, isActive, isNext, isPrev, isHidden 
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/5">
-            <FiCheck className="text-primary" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-black/40">Verified Review</span>
+          <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-100">
+            <FiCheck className="text-green-600" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-green-700/70">Verified Review</span>
           </div>
         </div>
       </div>

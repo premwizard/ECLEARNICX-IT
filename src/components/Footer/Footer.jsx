@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   FaLinkedinIn, 
   FaInstagram, 
@@ -13,15 +14,39 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   const currentYear = 2026; // As specified by user
+  const navigate = useNavigate();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/', id: 'home' },
+    { name: 'About', path: '/', id: 'about' },
+    { name: 'Services', path: '/', id: 'services' },
+    { name: 'Projects', path: '/', id: 'projects' },
+    { name: 'Careers', path: '/careers', id: 'careers' },
+    { name: 'Contact', path: '/contact', id: 'contact' },
   ];
+
+  const handleLinkClick = (link) => {
+    if (link.path === '/') {
+      if (window.location.pathname === '/') {
+        // Scroll to section
+        const element = document.getElementById(link.id);
+        if (element) {
+          if (window.lenis) {
+            window.lenis.scrollTo('#' + link.id, { offset: -100 });
+          } else {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      } else {
+        // Navigate to home with hash
+        navigate('/#' + link.id);
+      }
+    } else {
+      // Navigate to dedicated page
+      navigate(link.path);
+      window.scrollTo(0, 0);
+    }
+  };
 
   const services = [
     'UI/UX & Creative Design',
@@ -52,15 +77,14 @@ const Footer = () => {
           {/* Column 1: Brand & Contact */}
           <div className="space-y-6">
             <div className="flex flex-col gap-4">
-              <div className="text-white font-bold text-3xl flex items-center gap-3">
+              <Link to="/" className="text-white font-bold text-3xl flex items-center gap-3">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white text-xl shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] rotate-3">
                   E
                 </div>
                 <span className="tracking-tight uppercase">ECLEARNIX</span>
-              </div>
+              </Link>
               <p className="text-gray-400 text-base leading-relaxed max-w-xs">
-                ECLearnix Technology Solutions - Empowering businesses through cutting-edge technology and innovative digital strategies.
-              </p>
+ECLearnix Technology Solutions provides innovative IT services including software development, web and mobile applications, UI/UX design, AI automation, cloud solutions, digital transformation, and enterprise technology services for businesses worldwide.              </p>
             </div>
 
             <div className="space-y-5">
@@ -69,7 +93,7 @@ const Footer = () => {
                 <li className="flex items-start gap-3 group">
                   <FaMapMarkerAlt className="w-5 h-5 text-primary mt-1 shrink-0 transition-transform group-hover:scale-110" />
                   <span className="text-gray-400 text-sm leading-relaxed transition-colors group-hover:text-white">
-                    G Floor, KCT Tech Park, Forge.Factory, 3, Athipalayam Rd, Chinnavedampatti, Coimbatore, Tamil Nadu 641035
+                    ECLearnix EdTech Private Limited, G Floor, Forge Factory, KCT Tech Park, Chinnavedampatti, Coimbatore, Tamil Nadu 641035
                   </span>
                 </li>
                 <li className="flex items-center gap-3 group">
@@ -93,13 +117,13 @@ const Footer = () => {
             <ul className="space-y-4 pt-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
-                    href={link.href}
+                  <button 
+                    onClick={() => handleLinkClick(link)}
                     className="text-gray-400 text-sm hover:text-white transition-all duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-4" />
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -148,19 +172,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <p className="text-white text-xs font-bold uppercase tracking-widest mb-4">Newsletter</p>
-              <div className="flex gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Your email" 
-                  className="bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-primary w-full transition-colors"
-                />
-                <button className="bg-primary text-white p-3 rounded-lg hover:bg-primary/80 transition-colors">
-                  <FaEnvelope className="text-base" />
-                </button>
-              </div>
-            </div>
+       
           </div>
 
         </div>

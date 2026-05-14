@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, memo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiArrowUpRight, FiPlay } from 'react-icons/fi';
+import { FiArrowUpRight, FiCheckCircle, FiSmartphone, FiLayers, FiTrendingUp } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,55 +84,43 @@ const AboutSection = () => {
               
               <h2 className="about-fade-up text-[clamp(2.5rem,5vw,5rem)] font-extrabold text-[#0A0820] leading-[1.1] tracking-tighter mb-10">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6B35E8] to-[#3D00B8] py-2 inline-block overflow-visible">
-                  Pioneers of cross-channel customer journey intelligence
+                  Innovating the Future of Digital Experiences
                 </span>
               </h2>
 
               <p className="about-fade-up text-gray-500 text-lg md:text-xl lg:text-[22px] leading-[1.6] mb-12 max-w-2xl font-medium">
-                We're building the future by learning from the past. Since the early days of online retail, we've captured the voice of the customer. We've learned to adapt, innovate, and refine our approach to empower businesses with actionable intelligence and scalable technology solutions.
-              </p>
+ECLearnix Technology Solutions is the IT and technology division of ECLearnix, established to deliver complete digital and technology services across multiple industries.
+<br />We specialize in designing, developing, and managing modern digital solutions that help businesses stay competitive in today’s fast-moving digital world. Our team combines creativity, technology, and strategy to create impactful solutions tailored to every client’s needs.
+<br />Whether it’s a startup launching a new idea or an enterprise undergoing digital transformation, we provide end-to-end IT services with innovation, quality, and reliability.
+</p>
 
-              {/* Core Pillars Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div className="about-fade-up group">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                      <FiPlay size={18} />
+              {/* Services & Expertise Grid - Styled as Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+                {[
+                  { title: "UI/UX & Quality Engineering", icon: <FiCheckCircle size={18} /> },
+                  { title: "Software & Mobile App Development", icon: <FiSmartphone size={18} /> },
+                  { title: "Digital Platform Development", icon: <FiLayers size={18} /> },
+                  { title: "Strategic Consulting", icon: <FiTrendingUp size={18} /> }
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" }}
+                    whileHover={{ y: -8, backgroundColor: '#ffffff', boxShadow: '0 20px 40px rgba(61, 0, 184, 0.08)' }}
+                    className="group p-6 rounded-[2rem] bg-[#F4F7FF] border border-black/[0.04] hover:border-primary/40 transition-all duration-500 flex items-center gap-5 shadow-sm relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
+                    
+                    <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 flex-shrink-0 relative z-10 border border-black/[0.02]">
+                      {item.icon}
                     </div>
-                    <h4 className="text-xl font-bold text-[#0A0820]">Innovation Driven</h4>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed pl-14">
-                    Leveraging cutting-edge AI and automation to solve complex enterprise challenges.
-                  </p>
-                </div>
-
-                <div className="about-fade-up group">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                      <FiArrowUpRight size={18} />
-                    </div>
-                    <h4 className="text-xl font-bold text-[#0A0820]">Global Scalability</h4>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed pl-14">
-                    Architecting systems that grow seamlessly with your business across global markets.
-                  </p>
-                </div>
-              </div>
-
-              {/* Quick Stats Banner */}
-              <div className="about-fade-up flex flex-wrap items-center gap-10 md:gap-20 pt-8 border-t border-gray-100">
-                <div>
-                  <div className="text-4xl font-black text-[#0A0820] mb-1">120+</div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Tech Experts</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-[#0A0820] mb-1">500+</div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Projects Done</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-[#0A0820] mb-1">99%</div>
-                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Client Success</div>
-                </div>
+                    <h4 className="text-[13px] font-black text-[#0A0820] uppercase tracking-[0.18em] leading-tight group-hover:text-primary transition-colors relative z-10 pr-4">
+                      {item.title}
+                    </h4>
+                  </motion.div>
+                ))}
               </div>
 
 

@@ -221,20 +221,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* CTA SECTION (DARK) */}
-      <section className="py-32 px-6 md:px-20 relative overflow-hidden section-dark bg-gradient-to-b from-darkBg to-black">
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-12 leading-none text-white">
-            Scale Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Digital Future</span> Today
-          </h2>
-          <p className="text-xl text-white/50 mb-16 max-w-2xl mx-auto font-medium">
-            Let’s discuss how our {service.title} expertise can help you achieve your goals and transform your business operations.
-          </p>
-        </div>
-
-        {/* Ambient background lighting */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] -z-10" />
-      </section>
+   
     </motion.div>
   );
 }

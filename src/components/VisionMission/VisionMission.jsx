@@ -6,7 +6,7 @@ const CharReveal = ({ text, delay = 0, color = "white", hoverColor = "primary" }
   
   return (
     <motion.h2 
-      className={`text-[clamp(2.5rem,12vw,5rem)] md:text-[clamp(5rem,15vw,10rem)] font-bold text-${color} mb-4 md:mb-6 tracking-tighter transition-colors duration-500 group-hover:text-${hoverColor} relative leading-[0.9]`}
+      className={`text-[clamp(2.5rem,12vw,5rem)] md:text-[clamp(5rem,15vw,10rem)] font-bold text-${color} mb-2 md:mb-3 tracking-tighter transition-colors duration-500 group-hover:text-${hoverColor} relative leading-[0.9]`}
     >
 
       {characters.map((char, index) => (
@@ -126,7 +126,7 @@ const VisionMission = () => {
             initial={{ width: 0 }}
             whileInView={{ width: "80px" }}
             transition={{ delay: 1, duration: 1, ease: "circOut" }}
-            className="h-[2px] bg-primary mt-10 hidden md:block shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]"
+            className="h-[2px] bg-primary mt-4 hidden md:block shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]"
           />
         </motion.div>
 
@@ -182,7 +182,7 @@ const VisionMission = () => {
             initial={{ width: 0 }}
             whileInView={{ width: "80px" }}
             transition={{ delay: 1.2, duration: 1, ease: "circOut" }}
-            className="h-[2px] bg-secondary mt-10 ml-auto hidden md:block shadow-[0_0_10px_rgba(var(--secondary-rgb),0.5)]"
+            className="h-[2px] bg-secondary mt-4 ml-auto hidden md:block shadow-[0_0_10px_rgba(var(--secondary-rgb),0.5)]"
           />
         </motion.div>
       </motion.div>

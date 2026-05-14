@@ -40,7 +40,7 @@ const HeroHeading = memo(({ headingRef }) => (
   <h1 
     ref={headingRef}
     style={{
-      fontFamily: '"Manrope", sans-serif',
+      fontFamily: '"Sora", sans-serif',
       fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
       fontWeight: 800,
       color: '#ffffff',
@@ -177,7 +177,7 @@ export default function HeroSpline() {
         className="relative z-10 h-full flex flex-col items-center justify-center px-6 md:px-12 text-center w-full overflow-visible"
       >
         <div className="hero-reveal inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-12">
-          <FiZap className="text-[#A8DAFF] shadow-[0_0_15px_#A8DAFF]" />
+          <FiZap className="text-[#A8DAFF] " />
           <span className="text-[12px] font-semibold tracking-[5px] uppercase text-[#A8DAFF]">
             Empowering Businesses with Smart IT Solutions
           </span>

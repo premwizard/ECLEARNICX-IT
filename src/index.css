@@ -50,7 +50,7 @@ body,
 
 /* ===== GLOBAL FONT SETTINGS ===== */
 
-/* Apply Satoshi to everything by default */
+/* Apply Sora to everything by default */
 *,
 *::before,
 *::after {
@@ -62,25 +62,27 @@ html {
 }
 
 body {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 15px;
   line-height: 1.9;
+  letter-spacing: -0.01em;
   color: #8899BB;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Apply Manrope to ALL headings */
+/* Apply Sora to ALL headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.02em;
   color: #0A0820;
 }
 
@@ -108,7 +110,7 @@ h4 {
 /* Navigation links */
 nav a,
 .nav-link {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 800;
   font-size: 13px;
 }
@@ -117,7 +119,7 @@ nav a,
 button,
 .btn,
 a.button {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
@@ -125,7 +127,7 @@ a.button {
 
 /* All paragraph text */
 p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-weight: 400;
   font-size: 15px;
 }
@@ -136,7 +138,7 @@ li,
 label,
 input,
 textarea {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 
 /* Override any inline font styles */
@@ -145,13 +147,13 @@ textarea {
 .heading,
 [class*="title"],
 [class*="heading"] {
-  font-family: 'Manrope', sans-serif !important;
+  font-family: 'Sora', sans-serif !important;
 }
 
 .sub-title,
 .subtitle,
 .label-text {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 4px;
@@ -220,7 +222,7 @@ h6 {
   h5,
   h6 {
     @apply font-bold text-[#0A0820];
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Sora', sans-serif;
   }
 }
 

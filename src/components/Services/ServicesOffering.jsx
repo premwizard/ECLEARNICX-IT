@@ -60,7 +60,7 @@ export default function ServicesOffering() {
             <div className="srv-header-reveal flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-primary"></div>
               <p style={{
-                fontFamily: '"Satoshi", sans-serif',
+                fontFamily: '"Sora", sans-serif',
                 fontSize: '12px',
                 fontWeight: 600,
                 letterSpacing: '4px',
@@ -70,7 +70,7 @@ export default function ServicesOffering() {
             </div>
             <h2
               style={{
-                fontFamily: '"Manrope", sans-serif',
+                fontFamily: '"Sora", sans-serif',
                 fontSize: 'clamp(24px, 3vw, 38px)',
                 fontWeight: 700,
                 color: '#ffffff',
@@ -88,7 +88,7 @@ export default function ServicesOffering() {
             <p
               className="text-gray-400"
               style={{
-                fontFamily: '"Satoshi", sans-serif',
+                fontFamily: '"Sora", sans-serif',
                 fontSize: '15px',
                 fontWeight: 400,
                 lineHeight: 1.9,
@@ -115,8 +115,8 @@ export default function ServicesOffering() {
                   {srv.icon}
                 </div>
 
-                <h3 style={{ fontFamily: '"Manrope", sans-serif', fontSize: '18px', fontWeight: 600 }} className="text-white mb-4 tracking-tight leading-[1.3] py-2 overflow-visible">{srv.title}</h3>
-                <p style={{ fontFamily: '"Satoshi", sans-serif', fontSize: '14px' }} className="text-gray-400 leading-relaxed mb-6">{srv.desc}</p>
+                <h3 style={{ fontFamily: '"Sora", sans-serif', fontSize: '18px', fontWeight: 600 }} className="text-white mb-4 tracking-tight leading-[1.3] py-2 overflow-visible">{srv.title}</h3>
+                <p style={{ fontFamily: '"Sora", sans-serif', fontSize: '14px' }} className="text-gray-400 leading-relaxed mb-6">{srv.desc}</p>
 
                 <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-primary font-bold text-xs uppercase tracking-widest">
                   Explore →
