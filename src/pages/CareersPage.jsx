@@ -167,8 +167,8 @@ export default function CareersPage() {
           </div>
 
           <h1 className="hero-title text-6xl md:text-[100px] lg:text-[120px] font-black uppercase tracking-tighter leading-[1.1] mb-8 py-10 overflow-visible text-white">
-            <span className="inline-block">Join the</span> <br />
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient ">Innovation</span>
+            <span className="inline-block font-black">Join the</span> <br />
+            <span className="inline-block font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient drop-shadow-sm">Innovation</span>
           </h1>
 
           <p className="hero-sub text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">

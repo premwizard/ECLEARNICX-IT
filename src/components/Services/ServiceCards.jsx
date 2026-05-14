@@ -74,23 +74,23 @@ export default function ServiceCards() {
               </div>
 
               {/* Panel Content */}
-              <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-10">
+              <div className="absolute inset-0 p-4 md:p-4 flex flex-col justify-end z-10">
                 {/* Number Indicator */}
-                <div className="absolute top-10 left-10 text-white/20 font-black text-4xl tracking-tighter group-hover:text-primary transition-colors">
+                <div className="absolute top-8 left-8 text-white/20 font-black text-4xl tracking-tighter group-hover:text-primary transition-colors">
                   0{i + 1}
                 </div>
 
                 <div className="max-w-md">
-                  <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform origin-left duration-500">
+                  <div className="text-2xl mb-6 transform group-hover:scale-125 transition-transform origin-left duration-500">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-black !text-white uppercase tracking-tighter mb-3 leading-none group-hover:text-primary transition-colors">
+                  <h3 className="text-xs md:text-base font-black !text-white uppercase tracking-tight mb-3 leading-tight group-hover:text-primary transition-colors break-words">
                     {service.title}
                   </h3>
 
                   <div className={`overflow-hidden transition-all duration-500 ${hoveredIndex === i ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0 lg:hidden'}`}>
-                    <p className="!text-white/80 font-medium mb-5 leading-relaxed text-sm md:text-base">
+                    <p className="!text-white/80 font-medium mb-5 leading-relaxed text-[10px] md:text-xs">
                       {service.shortDesc}
                     </p>
                     <div className="inline-flex items-center gap-4 text-primary font-black tracking-widest text-[9px] uppercase group-hover:gap-6 transition-all">
