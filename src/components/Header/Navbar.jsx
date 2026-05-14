@@ -123,24 +123,26 @@ export default function Navbar() {
     : 'bg-transparent py-5'
 }`}
     >
-      <div className="container mx-auto px-6 md:px-12 h-[72px] flex items-center justify-between">
-        {/* Logo Section */}
-        <Link
-          to="/"
-          onClick={() => scrollToSection('home')}
-          className="flex items-center gap-4 group shrink-0"
-        >
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] shadow-lg shadow-primary/20">
-            <span className="text-white text-xl font-black">E</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white font-bold text-lg tracking-tighter leading-tight font-heading">ECLearnix</span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-primary font-black -mt-0.5">Technology</span>
-          </div>
-        </Link>
+      <div className="container mx-auto px-6 md:px-12 h-[72px] flex items-center">
+        {/* Left: Logo Section */}
+        <div className="flex-1 flex items-center justify-start">
+          <Link
+            to="/"
+            onClick={() => scrollToSection('home')}
+            className="flex items-center gap-4 group shrink-0"
+          >
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-all duration-700 group-hover:rotate-[360deg] shadow-lg shadow-primary/20">
+              <span className="text-white text-xl font-black">E</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-white font-bold text-lg tracking-tighter leading-tight font-heading">ECLearnix</span>
+              <span className="text-[9px] uppercase tracking-[0.4em] text-primary font-black -mt-0.5">Technology</span>
+            </div>
+          </Link>
+        </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex gap-2 items-center">
+        {/* Center: Desktop Navigation */}
+        <div className="hidden lg:flex gap-1 items-center justify-center">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -169,30 +171,18 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Action Area */}
-        <div className="hidden lg:flex items-center gap-8">
-          <div className="h-6 w-[1px] bg-white/10" />
-          <a
-            href="mailto:info@eclearnix.com"
-            className="group flex items-center gap-4 cursor-pointer"
-          >
-            <div className="w-10 h-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 transition-all duration-500 group-hover:scale-105">
-              <FaEnvelope className="text-sm" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-black mb-1">mail us at:</span>
-              <span className="text-white text-[15px] font-black tracking-tight group-hover:text-primary transition-all duration-300 font-body">info@eclearnix.com</span>
-            </div>
-          </a>
-        </div>
+        {/* Right: Spacer (Keeps center links centered) */}
+        <div className="flex-1 hidden lg:flex items-center justify-end" />
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden w-11 h-11 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
-          onClick={() => setMobileMenu(true)}
-        >
-          <FaBars className="text-lg" />
-        </button>
+        {/* Mobile Menu Button (Stays right on small screens) */}
+        <div className="lg:hidden flex-1 flex justify-end">
+          <button
+            className="w-11 h-11 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+            onClick={() => setMobileMenu(true)}
+          >
+            <FaBars className="text-lg" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -246,8 +236,7 @@ export default function Navbar() {
               </div>
 
               <div className="mt-auto pt-10 border-t border-white/10">
-                 <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-black mb-3">Get in touch:</p>
-                 <a href="mailto:info@eclearnix.com" className="text-white text-xl font-black hover:text-primary transition-colors break-all">info@eclearnix.com</a>
+                 <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] font-black mb-3">© 2026 ECLearnix Technology</p>
               </div>
             </div>
           </motion.div>

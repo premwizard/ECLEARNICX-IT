@@ -99,7 +99,7 @@ const TeamCard = ({ member }) => {
             <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter mb-0.5 transition-colors group-hover:text-primary">
               {member.name}
             </h3>
-            <p className="text-[7px] font-bold uppercase tracking-[0.4em] text-[#1560BD] transition-colors group-hover:text-white">
+            <p className="!text-[12px] font-medium uppercase tracking-[0.5em] text-[#1560BD] transition-colors group-hover:text-white leading-none">
               {member.role}
             </p>
           </div>

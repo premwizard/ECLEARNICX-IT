@@ -74,7 +74,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* Column 1: Brand & Contact */}
+          {/* Column 1: Brand & Description */}
           <div className="space-y-6">
             <div className="flex flex-col gap-4">
               <Link to="/" className="text-white font-bold text-3xl flex items-center gap-3">
@@ -84,27 +84,8 @@ const Footer = () => {
                 <span className="tracking-tight uppercase">ECLEARNIX</span>
               </Link>
               <p className="text-gray-400 text-base leading-relaxed max-w-xs">
-ECLearnix Technology Solutions provides innovative IT services including software development, web and mobile applications, UI/UX design, AI automation, cloud solutions, digital transformation, and enterprise technology services for businesses worldwide.              </p>
-            </div>
-
-            <div className="space-y-5">
-              <h4 className="text-white text-sm font-bold uppercase tracking-[0.2em]">Contact Us</h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 group">
-                  <FaMapMarkerAlt className="w-5 h-5 text-primary mt-1 shrink-0 transition-transform group-hover:scale-110" />
-                  <span className="text-gray-400 text-sm leading-relaxed transition-colors group-hover:text-white">
-                    ECLearnix EdTech Private Limited, G Floor, Forge Factory, KCT Tech Park, Chinnavedampatti, Coimbatore, Tamil Nadu 641035
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <FaPhoneAlt className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
-                  <a href="tel:+919677522592" className="text-gray-400 text-sm transition-colors group-hover:text-white">+91 96775 22592</a>
-                </li>
-                <li className="flex items-center gap-3 group">
-                  <FaEnvelope className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
-                  <a href="mailto:info@eclearnix.com" className="text-gray-400 text-sm transition-colors group-hover:text-white">info@eclearnix.com</a>
-                </li>
-              </ul>
+                ECLearnix Technology Solutions provides innovative IT services including software development, web and mobile applications, UI/UX design, AI automation, cloud solutions, digital transformation, and enterprise technology services for businesses worldwide.
+              </p>
             </div>
           </div>
 
@@ -145,8 +126,31 @@ ECLearnix Technology Solutions provides innovative IT services including softwar
             </ul>
           </div>
 
-          {/* Column 4: Social Media & Newsletter */}
-          <div className="space-y-8">
+          {/* Column 4: Contact & Social Media */}
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <h4 className="text-white text-sm font-bold uppercase tracking-[0.2em] relative inline-block">
+                Contact Us
+                <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-primary" />
+              </h4>
+              <ul className="space-y-4 pt-2">
+                <li className="flex items-start gap-3 group">
+                  <FaMapMarkerAlt className="w-5 h-5 text-primary mt-1 shrink-0 transition-transform group-hover:scale-110" />
+                  <span className="text-gray-400 text-sm leading-relaxed transition-colors group-hover:text-white">
+                    ECLearnix EdTech Private Limited, G Floor, Forge Factory, KCT Tech Park, Chinnavedampatti, Coimbatore, TN 641035
+                  </span>
+                </li>
+                <li className="flex items-center gap-3 group">
+                  <FaPhoneAlt className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
+                  <a href="tel:+919677522592" className="text-gray-400 text-sm transition-colors group-hover:text-white">+91 96775 22592</a>
+                </li>
+                <li className="flex items-center gap-3 group">
+                  <FaEnvelope className="w-5 h-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
+                  <a href="mailto:info@eclearnix.com" className="text-gray-400 text-sm transition-colors group-hover:text-white">info@eclearnix.com</a>
+                </li>
+              </ul>
+            </div>
+
             <div className="space-y-6">
               <h4 className="text-white text-sm font-bold uppercase tracking-[0.2em] relative inline-block">
                 Connect With Us
@@ -171,23 +175,21 @@ ECLearnix Technology Solutions provides innovative IT services including softwar
                 ))}
               </div>
             </div>
-
-       
           </div>
 
         </div>
 
         {/* Bottom Section */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase text-center md:text-left">
+        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] font-medium tracking-widest text-gray-500 uppercase text-center md:text-left opacity-60">
             © {currentYear} ECLEARNIX TECHNOLOGY SOLUTIONS. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
               <a 
                 key={item}
                 href="#" 
-                className="text-xs font-bold tracking-[0.2em] text-gray-500 hover:text-primary uppercase transition-colors"
+                className="text-[10px] font-medium tracking-widest text-gray-500 hover:text-primary uppercase transition-colors opacity-60 hover:opacity-100"
               >
                 {item}
               </a>

@@ -57,12 +57,11 @@ const FeatureCard = ({ feature, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -5, scale: 1.02 }}
       className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-300"
     >
       <div className="flex flex-col gap-4">
         {/* Icon Header - Box removed as requested */}
-        <div className={`${feature.color} group-hover:scale-110 transition-transform duration-300`}>
+        <div className={`${feature.color} transition-colors duration-300`}>
           <Icon className="w-8 h-8" />
         </div>
         

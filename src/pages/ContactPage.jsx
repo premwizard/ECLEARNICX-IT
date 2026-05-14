@@ -77,199 +77,159 @@ const ContactPage = () => {
         <div className="absolute w-[400px] h-[400px] bg-white/[0.01] rounded-full blur-[100px]" style={{ bottom: '10%', right: '15%' }} />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        {/* Header Section */}
-        <div className="max-w-4xl mb-24 md:mb-32">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-4 mb-8"
-          >
-            <div className="w-20 h-[1px] bg-gradient-to-r from-[#3D00B8] to-transparent"></div>
-            <span className="text-[#3D00B8] uppercase tracking-[0.6em] text-[10px] font-black">Contact</span>
-          </motion.div>
+      <div className="container mx-auto px-6 lg:px-20 relative z-10 h-full flex items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
           
-          <h1 className="contact-hero-text text-white text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.85] mb-12 py-2 overflow-visible">
-            Let’s Build the<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3D00B8] via-[#6B35E8] to-[#3D00B8] inline-block py-2 overflow-visible">Future Together</span>
-          </h1>
-          
-          <p className="contact-hero-text text-white/40 text-lg md:text-2xl max-w-2xl leading-relaxed font-light tracking-wide">
-            Looking for reliable IT solutions for your business?
-Partner with ECLearnix Technology Solutions to transform your ideas into powerful digital products and scalable business solutions.
-Get in touch with us today and start your digital transformation journey.
-
-          </p>
-        </div>
-
-        {/* The top row was removed as requested to bring info closer to the form */}
-
-
-        {/* Centered Form Section */}
-        <div className="max-w-4xl mx-auto contact-form-section">
-          <AnimatePresence mode="wait">
-            {formStatus === 'success' ? (
+          {/* LEFT COLUMN: Info & Branding */}
+          <div className="lg:col-span-5 space-y-10">
+            <div>
               <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="h-full min-h-[500px] flex flex-col items-center justify-center p-12 rounded-[3.5rem] bg-white/[0.01] border border-[#3D00B8]/20 backdrop-blur-3xl text-center"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="flex items-center gap-4 mb-6"
               >
-                <div className="w-24 h-24 rounded-full bg-[#3D00B8]/10 flex items-center justify-center text-[#3D00B8] text-4xl mb-8 animate-bounce">
-                  <FaCheck />
-                </div>
-                <h2 className="text-white text-4xl font-black uppercase tracking-tighter mb-4">Message Transmitted</h2>
-                <p className="text-white/40 max-w-sm mb-12">Thank you for initiating contact. Our team will review your inquiry and respond within 24 hours.</p>
-                <button 
-                  onClick={() => setFormStatus('idle')}
-                  className="px-12 py-5 bg-white/5 border border-white/10 rounded-2xl text-white text-xs uppercase tracking-[0.3em] font-black hover:bg-[#3D00B8] hover:text-white transition-all duration-500"
-                >
-                  Send Another Message
-                </button>
+                <div className="w-12 h-[1px] bg-primary"></div>
+                <span className="text-primary uppercase tracking-[0.5em] text-[10px] font-black">Contact Us</span>
               </motion.div>
-            ) : (
-              <div className="p-8 md:p-16 rounded-[3.5rem] bg-white/[0.01] border border-white/10 backdrop-blur-3xl relative overflow-hidden group shadow-2xl">
-                {/* Internal Cinematic Glows */}
-                <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#3D00B8]/10 rounded-full blur-[120px] pointer-events-none group-hover:bg-[#3D00B8]/15 transition-colors duration-1000" />
-                
-                <form onSubmit={handleSubmit} className="relative z-10 space-y-12">
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <FormInput id="full_name" name="name" label="Full Name" placeholder="John Doe" required />
-                    <FormInput id="email" name="email" label="Email Address" placeholder="john@company.com" type="email" required />
-                  </div>
+              
+              <h1 className="contact-hero-text text-white text-5xl md:text-6xl font-black uppercase tracking-tighter leading-tight mb-6">
+                Let’s Build the<br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondaryGradient">Future Together</span>
+              </h1>
+              
+              <p className="contact-hero-text text-white/40 text-sm md:text-base max-w-md leading-relaxed font-medium">
+                Partner with ECLearnix to transform your ideas into powerful digital products. 
+                Get in touch with us today.
+              </p>
+            </div>
 
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <FormInput id="phone" name="phone" label="Phone Number" placeholder="+91 96775 22592" optional />
-                    <FormInput id="company" name="company" label="Company / Org" placeholder="Your Business Name" optional />
+            {/* Quick Contacts */}
+            <div className="space-y-6 pt-4">
+              {[
+                { icon: <FaEnvelope />, label: "Email", val: "info@eclearnix.com" },
+                { icon: <FaPhone />, label: "Phone", val: "+91 96775 22592" },
+              ].map((item, i) => (
+                <div key={i} className="contact-info-card flex items-center gap-5 group/item">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary transition-all duration-500 group-hover/item:bg-primary group-hover/item:text-white">
+                    {item.icon}
                   </div>
+                  <div>
+                    <p className="text-[8px] uppercase tracking-[0.4em] text-primary font-black mb-0.5">{item.label}</p>
+                    <p className="text-white text-sm font-bold">{item.val}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <div className="space-y-4">
-                      <label htmlFor="inquiry_type" className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Inquiry Type</label>
-                      <div className="relative group/select">
+            {/* Socials */}
+            <div className="flex gap-3 pt-2">
+              {[<FaLinkedin />, <FaTwitter />, <FaInstagram />, <FaGithub />].map((icon, i) => (
+                <button key={i} className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40 border border-white/10 hover:bg-primary/20 hover:text-primary transition-all duration-500">
+                  {icon}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: The Form */}
+          <div className="lg:col-span-7 contact-form-section">
+            <AnimatePresence mode="wait">
+              {formStatus === 'success' ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  className="p-12 rounded-[2.5rem] bg-white/[0.02] border border-primary/20 backdrop-blur-3xl text-center"
+                >
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary text-3xl mx-auto mb-6">
+                    <FaCheck />
+                  </div>
+                  <h2 className="text-white text-3xl font-black uppercase tracking-tighter mb-4">Success!</h2>
+                  <p className="text-white/40 mb-10">We've received your message and will respond shortly.</p>
+                  <button onClick={() => setFormStatus('idle')} className="px-10 py-4 bg-primary text-white rounded-2xl text-xs uppercase tracking-widest font-black">Send Another</button>
+                </motion.div>
+              ) : (
+                <motion.div 
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="p-6 md:p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/10 backdrop-blur-3xl relative overflow-hidden group/form"
+                >
+                  {/* Internal Ambient Glows */}
+                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-[80px] group-hover/form:bg-primary/20 transition-colors duration-700" />
+                  
+                  <motion.form 
+                    onSubmit={handleSubmit} 
+                    className="relative z-10 space-y-5"
+                    variants={{
+                      hidden: { opacity: 0 },
+                      show: {
+                        opacity: 1,
+                        transition: { staggerChildren: 0.1 }
+                      }
+                    }}
+                    initial="hidden"
+                    animate="show"
+                  >
+                    <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="grid md:grid-cols-2 gap-5">
+                      <FormInput id="name" label="Full Name" placeholder="John Doe" required />
+                      <FormInput id="email" label="Email" type="email" placeholder="john@company.com" required />
+                    </motion.div>
+                    
+                    <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="grid md:grid-cols-2 gap-5">
+                      <FormInput id="phone" label="Phone" placeholder="+91 96775 22592" optional />
+                      <FormInput id="company" label="Company" placeholder="Business Name" optional />
+                    </motion.div>
+
+                    <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="grid md:grid-cols-2 gap-5">
+                      <div className="space-y-3 group/select">
+                        <label htmlFor="inquiry_type" className="text-[10px] uppercase tracking-[0.4em] text-primary font-black ml-4 opacity-70 transition-opacity group-focus-within/select:opacity-100">Inquiry Type</label>
                         <select 
                           id="inquiry_type"
-                          name="type"
-                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-6 text-white focus:outline-none focus:border-[#3D00B8]/50 focus:bg-[#3D00B8]/5 transition-all duration-500 appearance-none cursor-pointer"
+                          className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white text-sm focus:outline-none focus:border-primary/50 transition-all appearance-none cursor-pointer hover:bg-white/[0.08]"
                           defaultValue="General Inquiry"
                         >
                           <option className="bg-[#050505]">General Inquiry</option>
                           <option className="bg-[#050505]">Project Discussion</option>
                           <option className="bg-[#050505]">Technical Support</option>
-                          <option className="bg-[#050505]">Partnership</option>
                           <option className="bg-[#050505]">Career Opportunity</option>
-                          <option className="bg-[#050505]">Consultation</option>
-                          <option className="bg-[#050505]">Other</option>
                         </select>
-                        <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none text-[#3D00B8] transition-transform group-hover/select:translate-y-[-40%]">
-                          <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>
-                        </div>
                       </div>
-                    </div>
-                    <FormInput id="subject" name="subject" label="Subject" placeholder="Brief overview of inquiry" required />
-                  </div>
+                      <FormInput id="subject" label="Subject" placeholder="Brief overview" required />
+                    </motion.div>
 
-                  <div className="space-y-4">
-                    <label htmlFor="message" className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Message</label>
-                    <textarea 
-                      id="message"
-                      name="message"
-                      rows="6"
-                      required
-                      placeholder="Provide details about your inquiry..."
-                      className="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-6 text-white placeholder:text-white/10 focus:outline-none focus:border-[#3D00B8]/50 focus:bg-[#3D00B8]/5 transition-all duration-500 resize-none"
-                    ></textarea>
-                  </div>
+                    <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="space-y-3 group/textarea">
+                      <label htmlFor="message" className="text-[10px] uppercase tracking-[0.4em] text-primary font-black ml-4 opacity-70 transition-opacity group-focus-within/textarea:opacity-100">Message</label>
+                      <textarea 
+                        id="message"
+                        rows="3"
+                        placeholder="How can we help?"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white text-sm focus:outline-none focus:border-primary/50 transition-all resize-none hover:bg-white/[0.08]"
+                        required
+                      ></textarea>
+                    </motion.div>
 
-                  <div className="pt-6">
-                    <button 
-                      type="submit"
-                      disabled={formStatus === 'sending'}
-                      className="w-full group relative py-8 bg-[#3D00B8] text-white rounded-[2rem] overflow-hidden shadow-2xl shadow-[#3D00B8]/20 transition-all duration-700 hover:scale-[1.01] active:scale-95 disabled:opacity-50 disabled:cursor-wait"
+                    <motion.button 
+                      variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.98 }}
+                      type="submit" 
+                      className="w-full py-5 bg-primary text-white rounded-2xl font-black uppercase tracking-[0.4em] text-xs transition-all shadow-xl shadow-primary/20 relative overflow-hidden"
                     >
-                      <span className="relative z-10 font-black uppercase tracking-[0.5em] text-xs">
-                        {formStatus === 'sending' ? 'Transmitting...' : 'Send Inquiry'}
-                      </span>
-                      <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 opacity-30 transition-transform duration-700" />
-                      
-                      {/* Magnetic Glow Effect */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    </button>
-                  </div>
-                </form>
-              </div>
-            )}
-          </AnimatePresence>
-          
-          {/* Quick Contact & Socials Hub - Combined and Centered */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 p-8 md:p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 backdrop-blur-3xl flex flex-wrap items-center justify-between gap-10 overflow-hidden relative group"
-          >
-            {/* Ambient Background Glow */}
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#3D00B8]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#3D00B8]/10 transition-colors duration-700" />
-            
-            <div className="w-full relative z-10 flex flex-col gap-10">
-              {/* Top Row: Direct Contact & Socials */}
-              <div className="flex flex-wrap items-center justify-between gap-8 pb-8 border-b border-white/5">
-                <div className="flex flex-wrap gap-8 md:gap-12">
-                  {[
-                    { icon: <FaEnvelope />, label: "Email", val: "info@eclearnix.com" },
-                    { icon: <FaPhone />, label: "Phone", val: "+91 96775 22592" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 group/item">
-                      <div className="w-10 h-10 rounded-xl bg-[#3D00B8]/10 flex items-center justify-center text-[#3D00B8] text-sm group-hover/item:bg-[#3D00B8] group-hover/item:text-white transition-all duration-500">
-                        {item.icon}
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[#3D00B8] text-[8px] uppercase tracking-[0.3em] font-black opacity-50">{item.label}</span>
-                        <span className="text-white text-xs font-bold tracking-tight">{item.val}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Social Hub */}
-                <div className="flex items-center gap-3">
-                  {[<FaLinkedin />, <FaTwitter />, <FaInstagram />, <FaGithub />].map((icon, i) => (
-                    <button key={i} className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-white/30 border border-white/5 hover:bg-[#3D00B8]/10 hover:text-[#3D00B8] hover:border-[#3D00B8]/40 transition-all duration-500 hover:scale-110">
-                      <span className="text-sm">{icon}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom Row: Office Locations */}
-              <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-                {[
-                  { 
-                    type: "Main Office", 
-                    address: "ECLearnix EdTech Private Limited, G Floor, Forge Factory, KCT Tech Park, Chinnavedampatti, Coimbatore, TN 641035" 
-                  },
-                  { 
-                    type: "Branch Office", 
-                    address: "ECLearnix EdTech Private Limited, 3rd Floor, Sri Radha Towers, Saravanampatti, Coimbatore, TN 641035" 
-                  }
-                ].map((office, i) => (
-                  <div key={i} className="flex gap-5 group/office">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#3D00B8] group-hover/office:bg-[#3D00B8]/10 transition-colors duration-500">
-                      <FaMapMarkerAlt className="text-xs" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[#3D00B8] text-[9px] uppercase tracking-[0.4em] font-black opacity-60 group-hover/office:opacity-100 transition-opacity">{office.type}</span>
-                      <p className="text-white/50 text-[11px] leading-relaxed font-medium group-hover:text-white/80 transition-colors">
-                        {office.address}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+                      <span className="relative z-10">{formStatus === 'sending' ? 'Sending...' : 'Transmit Message'}</span>
+                      <motion.div 
+                        className="absolute inset-0 bg-white/10"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "0%" }}
+                        transition={{ duration: 0.4 }}
+                      />
+                    </motion.button>
+                  </motion.form>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-
       </div>
     </div>
   );
