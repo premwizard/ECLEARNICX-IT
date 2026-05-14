@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
+import React, { useEffect, Suspense, lazy } from 'react';
+import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from './components/Header/Navbar';
-import Footer from './components/Footer/Footer';
-import HomePage from './pages/HomePage';
-import CareersPage from './pages/CareersPage';
-import ContactPage from './pages/ContactPage';
-import ServiceDetailPage from './pages/ServiceDetailPage';
+const Navbar = lazy(() => import('./components/Header/Navbar'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CareersPage = lazy(() => import('./pages/CareersPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,23 +74,23 @@ function App() {
         {/* Grainy Noise Texture Overlay */}
         <div className="noise" />
 
-        <Navbar />
+        <Suspense fallback={null}>
+          <Navbar />
 
-        <main className="overflow-x-hidden">
+          <main className="overflow-x-hidden">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/careers" element={<CareersPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/services/:id" element={<ServiceDetailPage />} />
+              <Route path="*" element={<HomePage />} />
+            </Routes>
+          </main>
 
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/careers" element={<CareersPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/services/:id" element={<ServiceDetailPage />} />
-            {/* Add other routes if needed, or fallback to Home */}
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-        </main>
-
-        <footer className="relative z-10">
-          <Footer />
-        </footer>
+          <footer className="relative z-10">
+            <Footer />
+          </footer>
+        </Suspense>
       </div>
     </Router>
   );

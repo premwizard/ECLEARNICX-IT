@@ -137,16 +137,6 @@ export default function HeroSpline() {
           ease: "none"
         })
 
-        // Floating Motion for UI Cards
-        gsap.to('.ui-card-float', {
-          y: -20,
-          duration: 3,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          stagger: { amount: 1.5, from: 'random' }
-        })
-
         return () => {
           if (split) split.revert();
         };

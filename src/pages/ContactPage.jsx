@@ -134,20 +134,22 @@ Get in touch with us today and start your digital transformation journey.
                 
                 <form onSubmit={handleSubmit} className="relative z-10 space-y-12">
                   <div className="grid md:grid-cols-2 gap-10">
-                    <FormInput label="Full Name" placeholder="John Doe" required />
-                    <FormInput label="Email Address" placeholder="john@company.com" type="email" required />
+                    <FormInput id="full_name" name="name" label="Full Name" placeholder="John Doe" required />
+                    <FormInput id="email" name="email" label="Email Address" placeholder="john@company.com" type="email" required />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-10">
-                    <FormInput label="Phone Number" placeholder="+1 (555) 000-0000" optional />
-                    <FormInput label="Company / Org" placeholder="Your Business Name" optional />
+                    <FormInput id="phone" name="phone" label="Phone Number" placeholder="+91 96775 22592" optional />
+                    <FormInput id="company" name="company" label="Company / Org" placeholder="Your Business Name" optional />
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-10">
                     <div className="space-y-4">
-                      <label className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Inquiry Type</label>
+                      <label htmlFor="inquiry_type" className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Inquiry Type</label>
                       <div className="relative group/select">
                         <select 
+                          id="inquiry_type"
+                          name="type"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-6 text-white focus:outline-none focus:border-[#3D00B8]/50 focus:bg-[#3D00B8]/5 transition-all duration-500 appearance-none cursor-pointer"
                           defaultValue="General Inquiry"
                         >
@@ -164,12 +166,14 @@ Get in touch with us today and start your digital transformation journey.
                         </div>
                       </div>
                     </div>
-                    <FormInput label="Subject" placeholder="Brief overview of inquiry" required />
+                    <FormInput id="subject" name="subject" label="Subject" placeholder="Brief overview of inquiry" required />
                   </div>
 
                   <div className="space-y-4">
-                    <label className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Message</label>
+                    <label htmlFor="message" className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black ml-4 opacity-70">Message</label>
                     <textarea 
+                      id="message"
+                      name="message"
                       rows="6"
                       required
                       placeholder="Provide details about your inquiry..."
@@ -272,14 +276,16 @@ Get in touch with us today and start your digital transformation journey.
 };
 
 // Sub-component for Animated Inputs
-const FormInput = ({ label, placeholder, type = "text", required = false, optional = false }) => (
+const FormInput = ({ label, placeholder, type = "text", required = false, optional = false, id, name }) => (
   <div className="space-y-4 relative group/input">
     <div className="flex justify-between items-end px-4">
-      <label className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black opacity-70 transition-opacity group-focus-within/input:opacity-100">{label}</label>
+      <label htmlFor={id} className="text-[10px] uppercase tracking-[0.4em] text-[#3D00B8] font-black opacity-70 transition-opacity group-focus-within/input:opacity-100">{label}</label>
       {optional && <span className="text-[8px] uppercase tracking-widest text-white/20 font-bold">Optional</span>}
     </div>
     <div className="relative">
       <input 
+        id={id}
+        name={name || id}
         type={type} 
         required={required}
         placeholder={placeholder}
